@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,6 +28,7 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         initTeams();
+        initGUI();
     
     }
     
@@ -51,40 +54,165 @@ public class NewJFrame extends javax.swing.JFrame {
         table_results = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        label_gameweek = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         label_fixture_1_home = new javax.swing.JLabel();
         label_fixture_1_away = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        label_fixture_1_home10 = new javax.swing.JLabel();
-        label_fixture_1_away10 = new javax.swing.JLabel();
+        label_fixture_2_home = new javax.swing.JLabel();
+        label_fixture_2_away = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        label_fixture_1_home12 = new javax.swing.JLabel();
-        label_fixture_1_away12 = new javax.swing.JLabel();
+        label_fixture_4_home = new javax.swing.JLabel();
+        label_fixture_4_away = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        label_fixture_1_home13 = new javax.swing.JLabel();
-        label_fixture_1_away13 = new javax.swing.JLabel();
+        label_fixture_5_home = new javax.swing.JLabel();
+        label_fixture_5_away = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        label_fixture_1_home14 = new javax.swing.JLabel();
-        label_fixture_1_away14 = new javax.swing.JLabel();
+        label_fixture_6_home = new javax.swing.JLabel();
+        label_fixture_6_away = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        label_fixture_1_home15 = new javax.swing.JLabel();
-        label_fixture_1_away15 = new javax.swing.JLabel();
-        label_fixture_1_home11 = new javax.swing.JLabel();
+        label_fixture_7_home = new javax.swing.JLabel();
+        label_fixture_7_away = new javax.swing.JLabel();
+        label_fixture_3_home = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        label_fixture_1_away11 = new javax.swing.JLabel();
-        label_fixture_1_home16 = new javax.swing.JLabel();
+        label_fixture_3_away = new javax.swing.JLabel();
+        label_fixture_8_home = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        label_fixture_1_away16 = new javax.swing.JLabel();
-        label_fixture_1_home17 = new javax.swing.JLabel();
-        label_fixture_1_away17 = new javax.swing.JLabel();
+        label_fixture_8_away = new javax.swing.JLabel();
+        label_fixture_9_home = new javax.swing.JLabel();
+        label_fixture_9_away = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        label_opponent = new javax.swing.JLabel();
         button_play_match = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        label_home_away = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        pane_541 = new javax.swing.JTabbedPane();
+        pane_442 = new javax.swing.JPanel();
+        button_gk_442 = new javax.swing.JButton();
+        button_lb_442 = new javax.swing.JButton();
+        button_rb_442 = new javax.swing.JButton();
+        button_cb1_442 = new javax.swing.JButton();
+        button_cb2_442 = new javax.swing.JButton();
+        button_lm_442 = new javax.swing.JButton();
+        button_cm1_442 = new javax.swing.JButton();
+        button_cm2_442 = new javax.swing.JButton();
+        button_rm_442 = new javax.swing.JButton();
+        button_st1_442 = new javax.swing.JButton();
+        button_st2_442 = new javax.swing.JButton();
+        pane_443 = new javax.swing.JPanel();
+        button_cam_433 = new javax.swing.JButton();
+        button_lm_433 = new javax.swing.JButton();
+        button_rm_433 = new javax.swing.JButton();
+        button_lb_433 = new javax.swing.JButton();
+        button_rb_433 = new javax.swing.JButton();
+        button_cb1_433 = new javax.swing.JButton();
+        button_cb2_433 = new javax.swing.JButton();
+        button_gk_433 = new javax.swing.JButton();
+        button_rw_433 = new javax.swing.JButton();
+        button_st_433 = new javax.swing.JButton();
+        button_lw_433 = new javax.swing.JButton();
+        pane_4231 = new javax.swing.JPanel();
+        button_lm_4231 = new javax.swing.JButton();
+        button_rm_4231 = new javax.swing.JButton();
+        button_cm1_4231 = new javax.swing.JButton();
+        button_cm2_4231 = new javax.swing.JButton();
+        button_lb_4231 = new javax.swing.JButton();
+        button_rb_4231 = new javax.swing.JButton();
+        button_cb1_4231 = new javax.swing.JButton();
+        button_cb2_4231 = new javax.swing.JButton();
+        button_gk_4231 = new javax.swing.JButton();
+        button_cam_4231 = new javax.swing.JButton();
+        button_st_4231 = new javax.swing.JButton();
+        pane_4321 = new javax.swing.JPanel();
+        button_cm1_4321 = new javax.swing.JButton();
+        button_cm3_4321 = new javax.swing.JButton();
+        button_st_4321 = new javax.swing.JButton();
+        button_cm2_4321 = new javax.swing.JButton();
+        button_lw_4321 = new javax.swing.JButton();
+        button_rw_4321 = new javax.swing.JButton();
+        button_lb_4321 = new javax.swing.JButton();
+        button_rb_4321 = new javax.swing.JButton();
+        button_cb1_4321 = new javax.swing.JButton();
+        button_cb2_4321 = new javax.swing.JButton();
+        button_gk_4321 = new javax.swing.JButton();
+        pane_451 = new javax.swing.JPanel();
+        button_cm1_451 = new javax.swing.JButton();
+        button_cm3_451 = new javax.swing.JButton();
+        button_st_451 = new javax.swing.JButton();
+        button_cm2_451 = new javax.swing.JButton();
+        button_lm_451 = new javax.swing.JButton();
+        button_rm_451 = new javax.swing.JButton();
+        button_lb_451 = new javax.swing.JButton();
+        button_rb_451 = new javax.swing.JButton();
+        button_cb1_451 = new javax.swing.JButton();
+        button_cb2_451 = new javax.swing.JButton();
+        button_gk_451 = new javax.swing.JButton();
+        pane_343 = new javax.swing.JPanel();
+        button_cb1_343 = new javax.swing.JButton();
+        button_cb3_343 = new javax.swing.JButton();
+        button_st_343 = new javax.swing.JButton();
+        button_cb2_343 = new javax.swing.JButton();
+        button_lw_343 = new javax.swing.JButton();
+        button_rw_343 = new javax.swing.JButton();
+        button_lm_343 = new javax.swing.JButton();
+        button_rm_343 = new javax.swing.JButton();
+        button_cm1_343 = new javax.swing.JButton();
+        button_cm2_343 = new javax.swing.JButton();
+        button_gk_343 = new javax.swing.JButton();
+        pane_352 = new javax.swing.JPanel();
+        button_cb1_352 = new javax.swing.JButton();
+        button_cb3_352 = new javax.swing.JButton();
+        button_st1_352 = new javax.swing.JButton();
+        button_cam_352 = new javax.swing.JButton();
+        button_st2_352 = new javax.swing.JButton();
+        button_lm_352 = new javax.swing.JButton();
+        button_rm_352 = new javax.swing.JButton();
+        button_cm1_352 = new javax.swing.JButton();
+        button_cm2_352 = new javax.swing.JButton();
+        button_cb2_352 = new javax.swing.JButton();
+        button_gk_352 = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        button_lm_541 = new javax.swing.JButton();
+        button_rm_541 = new javax.swing.JButton();
+        button_cb2_541 = new javax.swing.JButton();
+        button_st_541 = new javax.swing.JButton();
+        button_lb_541 = new javax.swing.JButton();
+        button_rb_541 = new javax.swing.JButton();
+        button_cb1_541 = new javax.swing.JButton();
+        button_cb3_541 = new javax.swing.JButton();
+        button_gk_541 = new javax.swing.JButton();
+        button_cm1_541 = new javax.swing.JButton();
+        button_cm2_541 = new javax.swing.JButton();
+        pane_532 = new javax.swing.JPanel();
+        button_cm1_532 = new javax.swing.JButton();
+        button_cm3_532 = new javax.swing.JButton();
+        button_cm2_532 = new javax.swing.JButton();
+        button_cb2_532 = new javax.swing.JButton();
+        button_lb_532 = new javax.swing.JButton();
+        button_rb_532 = new javax.swing.JButton();
+        button_cb1_532 = new javax.swing.JButton();
+        button_cb3_532 = new javax.swing.JButton();
+        button_gk_532 = new javax.swing.JButton();
+        button_st1_532 = new javax.swing.JButton();
+        button_st2_532 = new javax.swing.JButton();
+        pane_5221 = new javax.swing.JPanel();
+        button_cm1_5221 = new javax.swing.JButton();
+        button_cm2_5221 = new javax.swing.JButton();
+        button_st_5221 = new javax.swing.JButton();
+        button_cb2_5221 = new javax.swing.JButton();
+        button_lb_5221 = new javax.swing.JButton();
+        button_rb_5221 = new javax.swing.JButton();
+        button_cb1_5221 = new javax.swing.JButton();
+        button_cb3_5221 = new javax.swing.JButton();
+        button_gk_5221 = new javax.swing.JButton();
+        button_lw_5221 = new javax.swing.JButton();
+        button_rw_5221 = new javax.swing.JButton();
+        button_save_team = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -284,9 +412,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Current gameweek:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("38");
+        label_gameweek.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        label_gameweek.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_gameweek.setText("38");
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -306,71 +434,71 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("-");
 
-        label_fixture_1_home10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home10.setText("Team");
+        label_fixture_2_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_2_home.setText("Team");
 
-        label_fixture_1_away10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away10.setText("Team");
+        label_fixture_2_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_2_away.setText("Team");
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("-");
 
-        label_fixture_1_home12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home12.setText("Team");
+        label_fixture_4_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_4_home.setText("Team");
 
-        label_fixture_1_away12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away12.setText("Team");
+        label_fixture_4_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_4_away.setText("Team");
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("-");
 
-        label_fixture_1_home13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home13.setText("Team");
+        label_fixture_5_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_5_home.setText("Team");
 
-        label_fixture_1_away13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away13.setText("Team");
+        label_fixture_5_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_5_away.setText("Team");
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("-");
 
-        label_fixture_1_home14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home14.setText("Team");
+        label_fixture_6_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_6_home.setText("Team");
 
-        label_fixture_1_away14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away14.setText("Team");
+        label_fixture_6_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_6_away.setText("Team");
 
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("-");
 
-        label_fixture_1_home15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home15.setText("Team");
+        label_fixture_7_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_7_home.setText("Team");
 
-        label_fixture_1_away15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away15.setText("Team");
+        label_fixture_7_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_7_away.setText("Team");
 
-        label_fixture_1_home11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home11.setText("Team");
+        label_fixture_3_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_3_home.setText("Team");
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("-");
 
-        label_fixture_1_away11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away11.setText("Team");
+        label_fixture_3_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_3_away.setText("Team");
 
-        label_fixture_1_home16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home16.setText("Team");
+        label_fixture_8_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_8_home.setText("Team");
 
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("-");
 
-        label_fixture_1_away16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away16.setText("Team");
+        label_fixture_8_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_8_away.setText("Team");
 
-        label_fixture_1_home17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_home17.setText("Team");
+        label_fixture_9_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_9_home.setText("Team");
 
-        label_fixture_1_away17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_fixture_1_away17.setText("Team");
+        label_fixture_9_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_fixture_9_away.setText("Team");
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("-");
@@ -390,53 +518,53 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label_fixture_1_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home10, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_2_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away10, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_2_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home12, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_4_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away12, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_4_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home13, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_5_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away13, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_5_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home14, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_6_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away14, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_6_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home15, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_7_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away15, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_7_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home11, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_3_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away11, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_3_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home16, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_8_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away16, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_fixture_8_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(label_fixture_1_home17, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                        .addComponent(label_fixture_9_home, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_fixture_1_away17, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(label_fixture_9_away, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -451,43 +579,43 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_2_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_2_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_3_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_3_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_4_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_4_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away13, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home13, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_5_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_5_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away14, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home14, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_6_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_6_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_7_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_7_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_8_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_8_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_fixture_1_away17, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_fixture_1_home17, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_9_away, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fixture_9_home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addGap(24, 24, 24))
         );
@@ -496,16 +624,21 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Your next opponent:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Reczpol FC");
+        label_opponent.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        label_opponent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_opponent.setText("Team");
 
         button_play_match.setText("Play Match");
         button_play_match.setToolTipText("");
+        button_play_match.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_play_matchActionPerformed(evt);
+            }
+        });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Home/Away");
+        label_home_away.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        label_home_away.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_home_away.setText("Home/Away");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -519,14 +652,14 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_opponent, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label_home_away, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(button_play_match, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(83, 83, 83)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -537,21 +670,993 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 489, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(label_opponent, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_home_away, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button_play_match, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
 
         jTabbedPane1.addTab("Panel", jPanel3);
+
+        button_gk_442.setText("Goalkeeper");
+        button_gk_442.setMargin(null);
+
+        button_lb_442.setText("jButton1");
+
+        button_rb_442.setText("jButton1");
+
+        button_cb1_442.setText("jButton1");
+
+        button_cb2_442.setText("jButton1");
+
+        button_lm_442.setText("jButton1");
+
+        button_cm1_442.setText("jButton1");
+
+        button_cm2_442.setText("jButton1");
+
+        button_rm_442.setText("jButton1");
+
+        button_st1_442.setText("jButton1");
+
+        button_st2_442.setText("jButton1");
+
+        javax.swing.GroupLayout pane_442Layout = new javax.swing.GroupLayout(pane_442);
+        pane_442.setLayout(pane_442Layout);
+        pane_442Layout.setHorizontalGroup(
+            pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_442Layout.createSequentialGroup()
+                .addComponent(button_lb_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_rb_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pane_442Layout.createSequentialGroup()
+                .addComponent(button_lm_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_rm_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_442Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_442Layout.createSequentialGroup()
+                        .addComponent(button_st1_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_st2_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_442Layout.createSequentialGroup()
+                        .addComponent(button_gk_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121))))
+            .addGroup(pane_442Layout.createSequentialGroup()
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_442Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cm1_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cm2_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_442Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(button_cb1_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cb2_442, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        pane_442Layout.setVerticalGroup(
+            pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_442Layout.createSequentialGroup()
+                .addContainerGap(71, Short.MAX_VALUE)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_st1_442)
+                    .addComponent(button_st2_442))
+                .addGap(60, 60, 60)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_442)
+                    .addComponent(button_rm_442))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_442)
+                    .addComponent(button_cm2_442))
+                .addGap(51, 51, 51)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_442)
+                    .addComponent(button_rb_442))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_442Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_442)
+                    .addComponent(button_cb2_442))
+                .addGap(43, 43, 43)
+                .addComponent(button_gk_442)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("4-4-2", pane_442);
+
+        button_cam_433.setText("jButton1");
+
+        button_lm_433.setText("jButton1");
+
+        button_rm_433.setText("jButton1");
+
+        button_lb_433.setText("jButton1");
+
+        button_rb_433.setText("jButton1");
+
+        button_cb1_433.setText("jButton1");
+
+        button_cb2_433.setText("jButton1");
+
+        button_gk_433.setText("Goalkeeper");
+        button_gk_433.setMargin(null);
+
+        button_rw_433.setText("jButton1");
+
+        button_st_433.setText("jButton1");
+
+        button_lw_433.setText("jButton1");
+
+        javax.swing.GroupLayout pane_443Layout = new javax.swing.GroupLayout(pane_443);
+        pane_443.setLayout(pane_443Layout);
+        pane_443Layout.setHorizontalGroup(
+            pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_443Layout.createSequentialGroup()
+                .addComponent(button_lb_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_rb_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_443Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_gk_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
+            .addGroup(pane_443Layout.createSequentialGroup()
+                .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_443Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(button_cam_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_443Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pane_443Layout.createSequentialGroup()
+                                .addComponent(button_lw_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_rw_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pane_443Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(button_st_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pane_443Layout.createSequentialGroup()
+                                .addComponent(button_lm_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_rm_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pane_443Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(button_cb1_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cb2_433, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        pane_443Layout.setVerticalGroup(
+            pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_443Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(button_st_433)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lw_433)
+                    .addComponent(button_rw_433))
+                .addGap(60, 60, 60)
+                .addComponent(button_cam_433)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_433)
+                    .addComponent(button_rm_433))
+                .addGap(51, 51, 51)
+                .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_433)
+                    .addComponent(button_rb_433))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_443Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_433)
+                    .addComponent(button_cb2_433))
+                .addGap(43, 43, 43)
+                .addComponent(button_gk_433)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("4-3-3", pane_443);
+
+        button_lm_4231.setText("jButton1");
+
+        button_rm_4231.setText("jButton1");
+
+        button_cm1_4231.setText("jButton1");
+
+        button_cm2_4231.setText("jButton1");
+
+        button_lb_4231.setText("jButton1");
+
+        button_rb_4231.setText("jButton1");
+
+        button_cb1_4231.setText("jButton1");
+
+        button_cb2_4231.setText("jButton1");
+
+        button_gk_4231.setText("Goalkeeper");
+        button_gk_4231.setMargin(null);
+
+        button_cam_4231.setText("jButton1");
+
+        button_st_4231.setText("jButton1");
+
+        javax.swing.GroupLayout pane_4231Layout = new javax.swing.GroupLayout(pane_4231);
+        pane_4231.setLayout(pane_4231Layout);
+        pane_4231Layout.setHorizontalGroup(
+            pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_4231Layout.createSequentialGroup()
+                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_4231Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pane_4231Layout.createSequentialGroup()
+                                .addComponent(button_lm_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(button_rm_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pane_4231Layout.createSequentialGroup()
+                                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pane_4231Layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pane_4231Layout.createSequentialGroup()
+                                                .addComponent(button_cm1_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(button_cm2_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pane_4231Layout.createSequentialGroup()
+                                                .addComponent(button_cb1_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(button_cb2_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(pane_4231Layout.createSequentialGroup()
+                                        .addGap(119, 119, 119)
+                                        .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(button_st_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(button_cam_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4231Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(button_gk_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4231Layout.createSequentialGroup()
+                        .addComponent(button_lb_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_4231, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        pane_4231Layout.setVerticalGroup(
+            pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4231Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(button_st_4231)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_cam_4231)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_4231)
+                    .addComponent(button_rm_4231))
+                .addGap(35, 35, 35)
+                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_4231)
+                    .addComponent(button_cm2_4231))
+                .addGap(51, 51, 51)
+                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_4231)
+                    .addComponent(button_rb_4231))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_4231Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_4231)
+                    .addComponent(button_cb2_4231))
+                .addGap(43, 43, 43)
+                .addComponent(button_gk_4231)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("4-2-3-1", pane_4231);
+
+        button_cm1_4321.setText("5");
+
+        button_cm3_4321.setText("7");
+
+        button_st_4321.setText("10");
+
+        button_cm2_4321.setText("6");
+
+        button_lw_4321.setText("8");
+
+        button_rw_4321.setText("9");
+
+        button_lb_4321.setText("1");
+
+        button_rb_4321.setText("4");
+
+        button_cb1_4321.setText("2");
+
+        button_cb2_4321.setText("3");
+
+        button_gk_4321.setText("Goalkeeper");
+        button_gk_4321.setMargin(null);
+
+        javax.swing.GroupLayout pane_4321Layout = new javax.swing.GroupLayout(pane_4321);
+        pane_4321.setLayout(pane_4321Layout);
+        pane_4321Layout.setHorizontalGroup(
+            pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_4321Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_4321Layout.createSequentialGroup()
+                        .addComponent(button_lb_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_4321Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(button_cm2_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4321Layout.createSequentialGroup()
+                        .addComponent(button_cm1_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_cm3_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_4321Layout.createSequentialGroup()
+                        .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pane_4321Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(button_cb1_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_cb2_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pane_4321Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(button_lw_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_rw_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4321Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4321Layout.createSequentialGroup()
+                                .addComponent(button_gk_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(121, 121, 121))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4321Layout.createSequentialGroup()
+                                .addComponent(button_st_4321, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118)))))
+                .addContainerGap())
+        );
+        pane_4321Layout.setVerticalGroup(
+            pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_4321Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(button_st_4321)
+                .addGap(32, 32, 32)
+                .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lw_4321)
+                    .addComponent(button_rw_4321))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_4321)
+                    .addComponent(button_cm3_4321))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cm2_4321)
+                .addGap(49, 49, 49)
+                .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_4321)
+                    .addComponent(button_rb_4321))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_4321Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_4321)
+                    .addComponent(button_cb2_4321))
+                .addGap(43, 43, 43)
+                .addComponent(button_gk_4321)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("4-3-2-1", pane_4321);
+
+        button_cm1_451.setText("jButton1");
+
+        button_cm3_451.setText("jButton1");
+
+        button_st_451.setText("jButton1");
+
+        button_cm2_451.setText("jButton1");
+
+        button_lm_451.setText("jButton1");
+
+        button_rm_451.setText("jButton1");
+
+        button_lb_451.setText("jButton1");
+
+        button_rb_451.setText("jButton1");
+
+        button_cb1_451.setText("jButton1");
+
+        button_cb2_451.setText("jButton1");
+
+        button_gk_451.setText("Goalkeeper");
+        button_gk_451.setMargin(null);
+
+        javax.swing.GroupLayout pane_451Layout = new javax.swing.GroupLayout(pane_451);
+        pane_451.setLayout(pane_451Layout);
+        pane_451Layout.setHorizontalGroup(
+            pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_451Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_451Layout.createSequentialGroup()
+                        .addComponent(button_lb_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_451Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(button_cm2_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                        .addComponent(button_cm1_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_cm3_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_451Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cb1_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cb2_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                                .addComponent(button_gk_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(121, 121, 121))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                                .addComponent(button_st_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                        .addComponent(button_lm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_rm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)))
+                .addContainerGap())
+        );
+        pane_451Layout.setVerticalGroup(
+            pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(button_st_451)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_451)
+                    .addComponent(button_rm_451))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_451)
+                    .addComponent(button_cm3_451))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cm2_451)
+                .addGap(49, 49, 49)
+                .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_451)
+                    .addComponent(button_rb_451))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_451Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_451)
+                    .addComponent(button_cb2_451))
+                .addGap(43, 43, 43)
+                .addComponent(button_gk_451)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("4-5-1", pane_451);
+
+        button_cb1_343.setText("jButton1");
+
+        button_cb3_343.setText("jButton1");
+
+        button_st_343.setText("jButton1");
+
+        button_cb2_343.setText("jButton1");
+
+        button_lw_343.setText("jButton1");
+
+        button_rw_343.setText("jButton1");
+
+        button_lm_343.setText("jButton1");
+
+        button_rm_343.setText("jButton1");
+
+        button_cm1_343.setText("jButton1");
+
+        button_cm2_343.setText("jButton1");
+
+        button_gk_343.setText("Goalkeeper");
+        button_gk_343.setMargin(null);
+
+        javax.swing.GroupLayout pane_343Layout = new javax.swing.GroupLayout(pane_343);
+        pane_343.setLayout(pane_343Layout);
+        pane_343Layout.setHorizontalGroup(
+            pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_343Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_343Layout.createSequentialGroup()
+                        .addComponent(button_lm_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rm_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                        .addComponent(button_cb1_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_cb3_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_343Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cm1_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cm2_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                                .addComponent(button_st_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                                .addComponent(button_lw_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_rw_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button_gk_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_cb2_343, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(122, 122, 122))
+        );
+        pane_343Layout.setVerticalGroup(
+            pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_343Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(button_st_343)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lw_343)
+                    .addComponent(button_rw_343))
+                .addGap(45, 45, 45)
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_343)
+                    .addComponent(button_rm_343))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_343)
+                    .addComponent(button_cm2_343))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(pane_343Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_343)
+                    .addComponent(button_cb3_343))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cb2_343)
+                .addGap(38, 38, 38)
+                .addComponent(button_gk_343)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("3-4-3", pane_343);
+
+        button_cb1_352.setText("jButton1");
+
+        button_cb3_352.setText("jButton1");
+
+        button_st1_352.setText("jButton1");
+
+        button_cam_352.setText("jButton1");
+
+        button_st2_352.setText("jButton1");
+
+        button_lm_352.setText("jButton1");
+
+        button_rm_352.setText("jButton1");
+
+        button_cm1_352.setText("jButton1");
+
+        button_cm2_352.setText("jButton1");
+
+        button_cb2_352.setText("jButton1");
+
+        button_gk_352.setText("Goalkeeper");
+        button_gk_352.setMargin(null);
+
+        javax.swing.GroupLayout pane_352Layout = new javax.swing.GroupLayout(pane_352);
+        pane_352.setLayout(pane_352Layout);
+        pane_352Layout.setHorizontalGroup(
+            pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_352Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_352Layout.createSequentialGroup()
+                        .addComponent(button_lm_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rm_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                        .addComponent(button_cb1_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_cb3_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_352Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cm1_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cm2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                        .addGap(0, 115, Short.MAX_VALUE)
+                        .addComponent(button_cam_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                        .addComponent(button_st1_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(button_st2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)))
+                .addContainerGap())
+            .addGroup(pane_352Layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button_cb2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_gk_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pane_352Layout.setVerticalGroup(
+            pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_st2_352)
+                    .addComponent(button_st1_352))
+                .addGap(46, 46, 46)
+                .addComponent(button_cam_352)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_352)
+                    .addComponent(button_rm_352))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_352)
+                    .addComponent(button_cm2_352))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_352)
+                    .addComponent(button_cb3_352))
+                .addGap(21, 21, 21)
+                .addComponent(button_cb2_352)
+                .addGap(40, 40, 40)
+                .addComponent(button_gk_352)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("3-5-2", pane_352);
+
+        button_lm_541.setText("jButton1");
+
+        button_rm_541.setText("jButton1");
+
+        button_cb2_541.setText("jButton1");
+
+        button_st_541.setText("jButton1");
+
+        button_lb_541.setText("jButton1");
+
+        button_rb_541.setText("jButton1");
+
+        button_cb1_541.setText("jButton1");
+
+        button_cb3_541.setText("jButton1");
+
+        button_gk_541.setText("Goalkeeper");
+        button_gk_541.setMargin(null);
+
+        button_cm1_541.setText("jButton1");
+
+        button_cm2_541.setText("jButton1");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(button_lb_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addComponent(button_lm_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rm_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(button_cb1_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_cb3_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(button_cm1_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_cm2_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button_cb2_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                    .addComponent(button_gk_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(121, 121, 121))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                    .addComponent(button_st_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(120, 120, 120))))))
+                .addContainerGap())
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(button_st_541)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lm_541)
+                    .addComponent(button_rm_541))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_541)
+                    .addComponent(button_cm2_541))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_541)
+                    .addComponent(button_rb_541))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_541)
+                    .addComponent(button_cb3_541))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cb2_541)
+                .addGap(40, 40, 40)
+                .addComponent(button_gk_541)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("5-4-1", jPanel13);
+
+        button_cm1_532.setText("jButton1");
+
+        button_cm3_532.setText("jButton1");
+
+        button_cm2_532.setText("jButton1");
+
+        button_cb2_532.setText("jButton1");
+
+        button_lb_532.setText("jButton1");
+
+        button_rb_532.setText("jButton1");
+
+        button_cb1_532.setText("jButton1");
+
+        button_cb3_532.setText("jButton1");
+
+        button_gk_532.setText("Goalkeeper");
+        button_gk_532.setMargin(null);
+
+        button_st1_532.setText("jButton1");
+
+        button_st2_532.setText("jButton1");
+
+        javax.swing.GroupLayout pane_532Layout = new javax.swing.GroupLayout(pane_532);
+        pane_532.setLayout(pane_532Layout);
+        pane_532Layout.setHorizontalGroup(
+            pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_532Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_532Layout.createSequentialGroup()
+                        .addComponent(button_lb_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_532Layout.createSequentialGroup()
+                        .addComponent(button_cm1_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_cm3_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_532Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cb1_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cb3_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(pane_532Layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(button_cm2_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_532Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_532Layout.createSequentialGroup()
+                                .addComponent(button_st1_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_st2_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_532Layout.createSequentialGroup()
+                                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button_cb2_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button_gk_532, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(121, 121, 121)))))
+                .addContainerGap())
+        );
+        pane_532Layout.setVerticalGroup(
+            pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_532Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_st1_532)
+                    .addComponent(button_st2_532))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_532)
+                    .addComponent(button_cm3_532))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cm2_532)
+                .addGap(33, 33, 33)
+                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_532)
+                    .addComponent(button_rb_532))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_532Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_532)
+                    .addComponent(button_cb3_532))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cb2_532)
+                .addGap(40, 40, 40)
+                .addComponent(button_gk_532)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("5-3-2", pane_532);
+
+        button_cm1_5221.setText("jButton1");
+
+        button_cm2_5221.setText("jButton1");
+
+        button_st_5221.setText("jButton1");
+
+        button_cb2_5221.setText("jButton1");
+
+        button_lb_5221.setText("jButton1");
+
+        button_rb_5221.setText("jButton1");
+
+        button_cb1_5221.setText("jButton1");
+
+        button_cb3_5221.setText("jButton1");
+
+        button_gk_5221.setText("Goalkeeper");
+        button_gk_5221.setMargin(null);
+
+        button_lw_5221.setText("jButton1");
+
+        button_rw_5221.setText("jButton1");
+
+        javax.swing.GroupLayout pane_5221Layout = new javax.swing.GroupLayout(pane_5221);
+        pane_5221.setLayout(pane_5221Layout);
+        pane_5221Layout.setHorizontalGroup(
+            pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_5221Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pane_5221Layout.createSequentialGroup()
+                        .addComponent(button_lb_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_rb_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pane_5221Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(button_cb1_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(button_cb3_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_5221Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_5221Layout.createSequentialGroup()
+                                .addComponent(button_st_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_5221Layout.createSequentialGroup()
+                                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(button_cm1_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button_lw_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button_rw_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button_cm2_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(31, 31, 31))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_5221Layout.createSequentialGroup()
+                                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button_cb2_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button_gk_5221, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(121, 121, 121)))))
+                .addContainerGap())
+        );
+        pane_5221Layout.setVerticalGroup(
+            pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_5221Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(button_st_5221)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lw_5221)
+                    .addComponent(button_rw_5221))
+                .addGap(28, 28, 28)
+                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cm1_5221)
+                    .addComponent(button_cm2_5221))
+                .addGap(42, 42, 42)
+                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_lb_5221)
+                    .addComponent(button_rb_5221))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pane_5221Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_cb1_5221)
+                    .addComponent(button_cb3_5221))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_cb2_5221)
+                .addGap(40, 40, 40)
+                .addComponent(button_gk_5221)
+                .addContainerGap())
+        );
+
+        pane_541.addTab("5-2-2-1", pane_5221);
+
+        button_save_team.setText("Save team");
+        button_save_team.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_save_teamActionPerformed(evt);
+            }
+        });
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "6", "7" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(button_save_team, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pane_541))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(246, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pane_541, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_save_team, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pane_541.getAccessibleContext().setAccessibleName("");
+
+        jTabbedPane1.addTab("Play Match!", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -571,27 +1676,52 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_startActionPerformed
-
-       for(int i =0 ;i< teams.length; i++){
-            for(int j=0; j<teams.length; j++){
-                if(i!=j)
-                teams[i].PlayMatch(teams[j], 90);
+     private int findPlayersIndex(String name){
+        for(int i=0; i<11; i++){
+            if(teams[0].getMatchUp2(i).getSurname().equals(name) || teams[0].getMatchUp2(i).getName().equals(name)){
+                return i;
             }
-       }
-       DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
-       tm.setRowCount(0);
-       Arrays.sort(teams, new Comparator<Team>() {
-        @Override
-        public int compare(Team t1, Team t2) {
-            return t2.getPoints()-t1.getPoints();
         }
-        });
-       for(int i=0; i<teams.length; i++){ 
-            Object[] row={i+1,teams[i].getName(),teams[i].getPlayed(),teams[i].getWon(),teams[i].getDrawn(),teams[i].getLost(),teams[i].getScored(),teams[i].getConceded(),teams[i].getPoints()};
-            tm.addRow(row);
-       }         
-       league_table.setModel(tm);
+        return 0;
+    }
+
+    private void teamButtonClickActionPerformed(java.awt.event.ActionEvent evt) {
+        
+        if(selectedPlayerIndex==99) {
+            selectedPlayerIndex = findPlayersIndex(evt.getActionCommand());
+        }
+        else{
+            teams[0].swap(teams[0].getMatchUp2(selectedPlayerIndex),teams[0].getMatchUp2(findPlayersIndex(evt.getActionCommand())));
+            selectedPlayerIndex=99;
+            setButtons();
+        }
+    }
+
+
+   private void setButtons(){
+        for(int i=0 ; i<10 ; i++){
+            for(int j=0; j<11; j++){
+                if(!teams[0].getMatchUp2(j).getSurname().equals(" ")) {
+                    teamMatchUp[i][j].setText(teams[0].getMatchUp2(j).getSurname());
+                }
+                else teamMatchUp[i][j].setText(teams[0].getMatchUp2(j).getName());
+            }
+        }
+    }
+
+    private void setButtonsListeners(){
+        for(int i=0 ; i<10 ; i++){
+            for(int j=0; j<11; j++){
+                    teamMatchUp[i][j].addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            teamButtonClickActionPerformed(evt);
+                        }
+                    });;
+
+            }
+        }
+    }
+    private void button_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_startActionPerformed
        
     }//GEN-LAST:event_button_startActionPerformed
 
@@ -601,6 +1731,21 @@ public class NewJFrame extends javax.swing.JFrame {
         for(Match m : fixtures[combo_gameweek.getSelectedIndex()].getMatches())
             tm.addRow(new Object[]{ m.getHome().getName(),m.getGoalsHome().size(),m.getGoalsAway().size(),m.getAway().getName()});
     }//GEN-LAST:event_combo_gameweekActionPerformed
+
+    private void button_play_matchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_play_matchActionPerformed
+        ArrayList<Match> matches = fixtures[day-1].getMatches();
+        for(int i=0 ; i<matches.size(); i++){
+            matches.get(i).playMatch();
+        }
+        setTable();
+        day++;
+        label_gameweek.setText(String.valueOf(day));
+        setGameweekMatches();
+    }//GEN-LAST:event_button_play_matchActionPerformed
+
+    private void button_save_teamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_save_teamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_save_teamActionPerformed
 
     /**
      * @param args the command line arguments
@@ -621,7 +1766,7 @@ public class NewJFrame extends javax.swing.JFrame {
         Position RWB = new Position("B","R","E");
         Position RM = new Position("M","R","E");
         Position LM = new Position("M","L","E");
-        
+
 
         ArrayList <Formation> formations= new ArrayList<>();
         formations.add(new Formation("4-4-2",GK,LB,CB,CB,RB,LM,CM,CM,RM,ST,ST));
@@ -631,10 +1776,10 @@ public class NewJFrame extends javax.swing.JFrame {
         formations.add(new Formation("4-5-1",GK,LB,CB,CB,RB,LM,CM,CM,RM,CM,ST));
         formations.add(new Formation("3-4-3",GK,CB,CB,CB,CM,LM,CM,RW,RM,LW,ST));
         formations.add(new Formation("3-5-2",GK,CB,CB,CB,RM,CM,CM,CAM,LM,ST,ST));
-        formations.add(new Formation("5-4-1",GK,LB,CB,CB,RB,CB,CM,CM,RM,LM,ST));
-        formations.add(new Formation("5-3-2",GK,LB,CB,CB,RB,CB,CM,CM,CM,ST,ST));
+        formations.add(new Formation("5-4-1",GK,LB,CB,CB,CB,RB,CM,CM,RM,LM,ST));
+        formations.add(new Formation("5-3-2",GK,LB,CB,CB,CB,RB,CM,CM,CM,ST,ST));
         formations.add(new Formation("5-2-2-1",GK,LWB,CB,CB,RWB,CB,CM,CM,RW,LW,ST));
-        
+
 
 
         // tworzenie zawodników
@@ -963,9 +2108,176 @@ public class NewJFrame extends javax.swing.JFrame {
         teams[15].addPlayer(DSwist);
         teams[15].addPlayer(MSwist);
 
-       for(int i=0; i<teams.length; i++) teams[i].bestSetUp(formations,false);
-       
-       DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
+        for(int i=0; i<teams.length; i++) teams[i].bestSetUp(formations,false);
+
+
+
+    }
+
+    public void setGameweekMatches(){
+        System.out.println(fixtures[day].getMatches().size());
+        ArrayList<Match> gameweekMatches=fixtures[day-1].getMatches();
+        for(int i=0; i<gameweekMatches.size(); i++){
+            gameweekMatchesLabels[2*i].setText(gameweekMatches.get(i).getHome().getName());
+            gameweekMatchesLabels[2*i+1].setText(gameweekMatches.get(i).getAway().getName());
+        }
+    }
+   
+    public void setTable(){
+        DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
+        tm.setRowCount(0);
+        Arrays.sort(teams, new Comparator<Team>() {
+            @Override
+            public int compare(Team t1, Team t2) {
+                return t2.getPoints()-t1.getPoints();
+            }
+        });
+        for(int i=0; i<teams.length; i++){
+            Object[] row={i+1,teams[i].getName(),teams[i].getPlayed(),teams[i].getWon(),teams[i].getDrawn(),teams[i].getLost(),teams[i].getScored(),teams[i].getConceded(),teams[i].getPoints()};
+            tm.addRow(row);
+        }
+        league_table.setModel(tm);
+    }
+    public void initGUI(){
+        day=1;
+        label_gameweek.setText(String.valueOf(day));
+
+        teamMatchUp= new JButton[10][11];
+        teamMatchUp[1][0]=button_gk_433;
+        teamMatchUp[1][1]=button_lb_433;
+        teamMatchUp[1][2]=button_cb1_433;
+        teamMatchUp[1][3]=button_cb2_433;
+        teamMatchUp[1][4]=button_rb_433;
+        teamMatchUp[1][5]=button_lm_433;
+        teamMatchUp[1][6]=button_cam_433;
+        teamMatchUp[1][7]=button_rm_433;
+        teamMatchUp[1][8]=button_lw_433;
+        teamMatchUp[1][9]=button_rw_433;
+        teamMatchUp[1][10]=button_st_433;
+        teamMatchUp[2][0]=button_gk_4231;
+        teamMatchUp[2][1]=button_lb_4231;
+        teamMatchUp[2][2]=button_cb1_4231;
+        teamMatchUp[2][3]=button_cb2_4231;
+        teamMatchUp[2][4]=button_rb_4231;
+        teamMatchUp[2][5]=button_cm1_4231;
+        teamMatchUp[2][6]=button_cm2_4231;
+        teamMatchUp[2][7]=button_rm_4231;
+        teamMatchUp[2][8]=button_lm_4231;
+        teamMatchUp[2][9]=button_cam_4231;
+        teamMatchUp[2][10]=button_st_4231;
+        teamMatchUp[3][0]=button_gk_4321;
+        teamMatchUp[3][1]=button_lb_4321;
+        teamMatchUp[3][2]=button_cb1_4321;
+        teamMatchUp[3][3]=button_cb2_4321;
+        teamMatchUp[3][4]=button_rb_4321;
+        teamMatchUp[3][5]=button_cm1_4321;
+        teamMatchUp[3][6]=button_cm2_4321;
+        teamMatchUp[3][7]=button_cm3_4321;
+        teamMatchUp[3][8]=button_rw_4321;
+        teamMatchUp[3][9]=button_lw_4321;
+        teamMatchUp[3][10]=button_st_4321;
+        teamMatchUp[4][0]=button_gk_451;
+        teamMatchUp[4][1]=button_lb_451;
+        teamMatchUp[4][2]=button_cb1_451;
+        teamMatchUp[4][3]=button_cb2_451;
+        teamMatchUp[4][4]=button_rb_451;
+        teamMatchUp[4][5]=button_lm_451;
+        teamMatchUp[4][6]=button_cm1_451;
+        teamMatchUp[4][7]=button_cm2_451;
+        teamMatchUp[4][8]=button_rm_451;
+        teamMatchUp[4][9]=button_cm3_451;
+        teamMatchUp[4][10]=button_st_451;
+        teamMatchUp[5][0]=button_gk_343;
+        teamMatchUp[5][1]=button_cb1_343;
+        teamMatchUp[5][2]=button_cb2_343;
+        teamMatchUp[5][3]=button_cb3_343;
+        teamMatchUp[5][4]=button_cm1_343;
+        teamMatchUp[5][5]=button_lm_343;
+        teamMatchUp[5][6]=button_cm2_343;
+        teamMatchUp[5][7]=button_rw_343;
+        teamMatchUp[5][8]=button_rm_343;
+        teamMatchUp[5][9]=button_lw_343;
+        teamMatchUp[5][10]=button_st_343;
+        teamMatchUp[6][0]=button_gk_352;
+        teamMatchUp[6][1]=button_cb1_352;
+        teamMatchUp[6][2]=button_cb2_352;
+        teamMatchUp[6][3]=button_cb3_352;
+        teamMatchUp[6][4]=button_rm_352;
+        teamMatchUp[6][5]=button_cm1_352;
+        teamMatchUp[6][6]=button_cm2_352;
+        teamMatchUp[6][7]=button_cam_352;
+        teamMatchUp[6][8]=button_lm_352;
+        teamMatchUp[6][9]=button_st1_352;
+        teamMatchUp[6][10]=button_st2_352;
+        teamMatchUp[7][0]=button_gk_541;
+        teamMatchUp[7][1]=button_lb_541;
+        teamMatchUp[7][2]=button_cb1_541;
+        teamMatchUp[7][3]=button_cb2_541;
+        teamMatchUp[7][4]=button_cb3_541;
+        teamMatchUp[7][5]=button_rb_541;
+        teamMatchUp[7][6]=button_cm1_541;
+        teamMatchUp[7][7]=button_cm2_541;
+        teamMatchUp[7][8]=button_rm_541;
+        teamMatchUp[7][9]=button_lm_541;
+        teamMatchUp[7][10]=button_st_541;
+        teamMatchUp[8][0]=button_gk_532;
+        teamMatchUp[8][1]=button_lb_532;
+        teamMatchUp[8][2]=button_cb1_532;
+        teamMatchUp[8][3]=button_cb2_532;
+        teamMatchUp[8][4]=button_cb3_532;
+        teamMatchUp[8][5]=button_rb_532;
+        teamMatchUp[8][6]=button_cm1_532;
+        teamMatchUp[8][7]=button_cm2_532;
+        teamMatchUp[8][8]=button_cm3_532;
+        teamMatchUp[8][9]=button_st1_532;
+        teamMatchUp[8][10]=button_st2_532;
+        teamMatchUp[9][0]=button_gk_5221;
+        teamMatchUp[9][1]=button_lb_5221;
+        teamMatchUp[9][2]=button_cb1_5221;
+        teamMatchUp[9][3]=button_cb2_5221;
+        teamMatchUp[9][4]=button_cb3_5221;
+        teamMatchUp[9][5]=button_rb_5221;
+        teamMatchUp[9][6]=button_cm1_5221;
+        teamMatchUp[9][7]=button_cm2_5221;
+        teamMatchUp[9][8]=button_lw_5221;
+        teamMatchUp[9][9]=button_rw_5221;
+        teamMatchUp[9][10]=button_st_5221;
+        teamMatchUp[0][0]=button_gk_442;
+        teamMatchUp[0][1]=button_lb_442;
+        teamMatchUp[0][2]=button_cb1_442;
+        teamMatchUp[0][3]=button_cb2_442;
+        teamMatchUp[0][4]=button_rb_442;
+        teamMatchUp[0][5]=button_lm_442;
+        teamMatchUp[0][6]=button_cm1_442;
+        teamMatchUp[0][7]=button_cm2_442;
+        teamMatchUp[0][8]=button_rm_442;
+        teamMatchUp[0][9]=button_st1_442;
+        teamMatchUp[0][10]=button_st2_442;
+
+        setButtons();
+        setButtonsListeners();
+
+        gameweekMatchesLabels = new JLabel[18];
+        gameweekMatchesLabels[0] = label_fixture_1_home;
+        gameweekMatchesLabels[1] = label_fixture_1_away;
+        gameweekMatchesLabels[2] = label_fixture_2_home;
+        gameweekMatchesLabels[3] = label_fixture_2_away;
+        gameweekMatchesLabels[4] = label_fixture_3_home;
+        gameweekMatchesLabels[5] = label_fixture_3_away;
+        gameweekMatchesLabels[6] = label_fixture_4_home;
+        gameweekMatchesLabels[7] = label_fixture_4_away;
+        gameweekMatchesLabels[8] = label_fixture_5_home;
+        gameweekMatchesLabels[9] = label_fixture_5_away;
+        gameweekMatchesLabels[10] = label_fixture_6_home;
+        gameweekMatchesLabels[11] = label_fixture_6_away;
+        gameweekMatchesLabels[12] = label_fixture_7_home;
+        gameweekMatchesLabels[13] = label_fixture_7_away;
+        gameweekMatchesLabels[14] = label_fixture_8_home;
+        gameweekMatchesLabels[15] = label_fixture_8_away;
+        gameweekMatchesLabels[16] = label_fixture_9_home;
+        gameweekMatchesLabels[17] = label_fixture_9_away;
+
+        DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
         tm.setRowCount(0);
         Arrays.sort(teams, new Comparator<Team>() {
             @Override
@@ -1043,12 +2355,12 @@ public class NewJFrame extends javax.swing.JFrame {
         tmo.setRowCount(0);
         for(Match m : fixtures[0].getMatches())
             tmo.addRow(new Object[]{ m.getHome().getName(),m.getGoalsHome().size(),m.getGoalsAway().size(),m.getAway().getName()});
-        button_start.setEnabled(false);
+        button_start.setEnabled(true);
         table_results.setModel(tmo);
-       
+        setGameweekMatches();
+
     }
-    
-    public static ArrayList<Team> rotate(ArrayList<Team> old){
+     public static ArrayList<Team> rotate(ArrayList<Team> old){
         ArrayList<Team> newRotation = new ArrayList<>();
         newRotation.add(old.get(0));
         for(int i=1; i<old.size(); i++){
@@ -1100,8 +2412,119 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button_cam_352;
+    private javax.swing.JButton button_cam_4231;
+    private javax.swing.JButton button_cam_433;
+    private javax.swing.JButton button_cb1_343;
+    private javax.swing.JButton button_cb1_352;
+    private javax.swing.JButton button_cb1_4231;
+    private javax.swing.JButton button_cb1_4321;
+    private javax.swing.JButton button_cb1_433;
+    private javax.swing.JButton button_cb1_442;
+    private javax.swing.JButton button_cb1_451;
+    private javax.swing.JButton button_cb1_5221;
+    private javax.swing.JButton button_cb1_532;
+    private javax.swing.JButton button_cb1_541;
+    private javax.swing.JButton button_cb2_343;
+    private javax.swing.JButton button_cb2_352;
+    private javax.swing.JButton button_cb2_4231;
+    private javax.swing.JButton button_cb2_4321;
+    private javax.swing.JButton button_cb2_433;
+    private javax.swing.JButton button_cb2_442;
+    private javax.swing.JButton button_cb2_451;
+    private javax.swing.JButton button_cb2_5221;
+    private javax.swing.JButton button_cb2_532;
+    private javax.swing.JButton button_cb2_541;
+    private javax.swing.JButton button_cb3_343;
+    private javax.swing.JButton button_cb3_352;
+    private javax.swing.JButton button_cb3_5221;
+    private javax.swing.JButton button_cb3_532;
+    private javax.swing.JButton button_cb3_541;
+    private javax.swing.JButton button_cm1_343;
+    private javax.swing.JButton button_cm1_352;
+    private javax.swing.JButton button_cm1_4231;
+    private javax.swing.JButton button_cm1_4321;
+    private javax.swing.JButton button_cm1_442;
+    private javax.swing.JButton button_cm1_451;
+    private javax.swing.JButton button_cm1_5221;
+    private javax.swing.JButton button_cm1_532;
+    private javax.swing.JButton button_cm1_541;
+    private javax.swing.JButton button_cm2_343;
+    private javax.swing.JButton button_cm2_352;
+    private javax.swing.JButton button_cm2_4231;
+    private javax.swing.JButton button_cm2_4321;
+    private javax.swing.JButton button_cm2_442;
+    private javax.swing.JButton button_cm2_451;
+    private javax.swing.JButton button_cm2_5221;
+    private javax.swing.JButton button_cm2_532;
+    private javax.swing.JButton button_cm2_541;
+    private javax.swing.JButton button_cm3_4321;
+    private javax.swing.JButton button_cm3_451;
+    private javax.swing.JButton button_cm3_532;
     private javax.swing.JButton button_exit;
+    private javax.swing.JButton button_gk_343;
+    private javax.swing.JButton button_gk_352;
+    private javax.swing.JButton button_gk_4231;
+    private javax.swing.JButton button_gk_4321;
+    private javax.swing.JButton button_gk_433;
+    private javax.swing.JButton button_gk_442;
+    private javax.swing.JButton button_gk_451;
+    private javax.swing.JButton button_gk_5221;
+    private javax.swing.JButton button_gk_532;
+    private javax.swing.JButton button_gk_541;
+    private javax.swing.JButton button_lb_4231;
+    private javax.swing.JButton button_lb_4321;
+    private javax.swing.JButton button_lb_433;
+    private javax.swing.JButton button_lb_442;
+    private javax.swing.JButton button_lb_451;
+    private javax.swing.JButton button_lb_5221;
+    private javax.swing.JButton button_lb_532;
+    private javax.swing.JButton button_lb_541;
+    private javax.swing.JButton button_lm_343;
+    private javax.swing.JButton button_lm_352;
+    private javax.swing.JButton button_lm_4231;
+    private javax.swing.JButton button_lm_433;
+    private javax.swing.JButton button_lm_442;
+    private javax.swing.JButton button_lm_451;
+    private javax.swing.JButton button_lm_541;
+    private javax.swing.JButton button_lw_343;
+    private javax.swing.JButton button_lw_4321;
+    private javax.swing.JButton button_lw_433;
+    private javax.swing.JButton button_lw_5221;
     private javax.swing.JButton button_play_match;
+    private javax.swing.JButton button_rb_4231;
+    private javax.swing.JButton button_rb_4321;
+    private javax.swing.JButton button_rb_433;
+    private javax.swing.JButton button_rb_442;
+    private javax.swing.JButton button_rb_451;
+    private javax.swing.JButton button_rb_5221;
+    private javax.swing.JButton button_rb_532;
+    private javax.swing.JButton button_rb_541;
+    private javax.swing.JButton button_rm_343;
+    private javax.swing.JButton button_rm_352;
+    private javax.swing.JButton button_rm_4231;
+    private javax.swing.JButton button_rm_433;
+    private javax.swing.JButton button_rm_442;
+    private javax.swing.JButton button_rm_451;
+    private javax.swing.JButton button_rm_541;
+    private javax.swing.JButton button_rw_343;
+    private javax.swing.JButton button_rw_4321;
+    private javax.swing.JButton button_rw_433;
+    private javax.swing.JButton button_rw_5221;
+    private javax.swing.JButton button_save_team;
+    private javax.swing.JButton button_st1_352;
+    private javax.swing.JButton button_st1_442;
+    private javax.swing.JButton button_st1_532;
+    private javax.swing.JButton button_st2_352;
+    private javax.swing.JButton button_st2_442;
+    private javax.swing.JButton button_st2_532;
+    private javax.swing.JButton button_st_343;
+    private javax.swing.JButton button_st_4231;
+    private javax.swing.JButton button_st_4321;
+    private javax.swing.JButton button_st_433;
+    private javax.swing.JButton button_st_451;
+    private javax.swing.JButton button_st_5221;
+    private javax.swing.JButton button_st_541;
     private javax.swing.JButton button_start;
     private javax.swing.JComboBox<String> combo_gameweek;
     private javax.swing.JLabel jLabel1;
@@ -1114,40 +2537,59 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel label_fixture_1_away;
-    private javax.swing.JLabel label_fixture_1_away10;
-    private javax.swing.JLabel label_fixture_1_away11;
-    private javax.swing.JLabel label_fixture_1_away12;
-    private javax.swing.JLabel label_fixture_1_away13;
-    private javax.swing.JLabel label_fixture_1_away14;
-    private javax.swing.JLabel label_fixture_1_away15;
-    private javax.swing.JLabel label_fixture_1_away16;
-    private javax.swing.JLabel label_fixture_1_away17;
     private javax.swing.JLabel label_fixture_1_home;
-    private javax.swing.JLabel label_fixture_1_home10;
-    private javax.swing.JLabel label_fixture_1_home11;
-    private javax.swing.JLabel label_fixture_1_home12;
-    private javax.swing.JLabel label_fixture_1_home13;
-    private javax.swing.JLabel label_fixture_1_home14;
-    private javax.swing.JLabel label_fixture_1_home15;
-    private javax.swing.JLabel label_fixture_1_home16;
-    private javax.swing.JLabel label_fixture_1_home17;
+    private javax.swing.JLabel label_fixture_2_away;
+    private javax.swing.JLabel label_fixture_2_home;
+    private javax.swing.JLabel label_fixture_3_away;
+    private javax.swing.JLabel label_fixture_3_home;
+    private javax.swing.JLabel label_fixture_4_away;
+    private javax.swing.JLabel label_fixture_4_home;
+    private javax.swing.JLabel label_fixture_5_away;
+    private javax.swing.JLabel label_fixture_5_home;
+    private javax.swing.JLabel label_fixture_6_away;
+    private javax.swing.JLabel label_fixture_6_home;
+    private javax.swing.JLabel label_fixture_7_away;
+    private javax.swing.JLabel label_fixture_7_home;
+    private javax.swing.JLabel label_fixture_8_away;
+    private javax.swing.JLabel label_fixture_8_home;
+    private javax.swing.JLabel label_fixture_9_away;
+    private javax.swing.JLabel label_fixture_9_home;
+    private javax.swing.JLabel label_gameweek;
+    private javax.swing.JLabel label_home_away;
+    private javax.swing.JLabel label_opponent;
     private javax.swing.JTable league_table;
+    private javax.swing.JPanel pane_343;
+    private javax.swing.JPanel pane_352;
+    private javax.swing.JPanel pane_4231;
+    private javax.swing.JPanel pane_4321;
+    private javax.swing.JPanel pane_442;
+    private javax.swing.JPanel pane_443;
+    private javax.swing.JPanel pane_451;
+    private javax.swing.JPanel pane_5221;
+    private javax.swing.JPanel pane_532;
+    private javax.swing.JTabbedPane pane_541;
     private javax.swing.JTable table_results;
     // End of variables declaration//GEN-END:variables
+
     private Team[] teams;
     private Day[] fixtures;
+    private int day;
+    private JLabel[] gameweekMatchesLabels;
+    private JButton[][] teamMatchUp;
+    private int selectedPlayerIndex=99;
 }
