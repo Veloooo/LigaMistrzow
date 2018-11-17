@@ -24,12 +24,11 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+     public NewJFrame(ArrayList<GamePlayer> gamePlayers) {
         initComponents();
         setResizable(false);
-        initTeams();
+        selectedTeam = GameStartMenu.local.getTeam();
         initGUI();
-    
     }
     
     /**
@@ -42,16 +41,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        league_table = new javax.swing.JTable();
-        button_start = new javax.swing.JButton();
-        button_exit = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        combo_gameweek = new javax.swing.JComboBox<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        table_results = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         label_gameweek = new javax.swing.JLabel();
@@ -88,8 +77,18 @@ public class NewJFrame extends javax.swing.JFrame {
         label_opponent = new javax.swing.JLabel();
         button_play_match = new javax.swing.JButton();
         label_home_away = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        combo_gameweek = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        table_results = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        league_table = new javax.swing.JTable();
+        button_start = new javax.swing.JButton();
+        button_exit = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        pane_541 = new javax.swing.JTabbedPane();
+        pane_formations = new javax.swing.JTabbedPane();
         pane_442 = new javax.swing.JPanel();
         button_gk_442 = new javax.swing.JButton();
         button_lb_442 = new javax.swing.JButton();
@@ -212,202 +211,17 @@ public class NewJFrame extends javax.swing.JFrame {
         button_rw_5221 = new javax.swing.JButton();
         button_save_team = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        list_substitutions = new javax.swing.JList<>();
+        list_others = new javax.swing.JScrollPane();
+        list_rest = new javax.swing.JList<>();
+        pane_play_match = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        table_match = new javax.swing.JTable();
+        button_pause = new javax.swing.JButton();
+        button_exit_match = new javax.swing.JButton();
+        label_minute = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        league_table.setAutoCreateRowSorter(true);
-        league_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        league_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                { new Integer(1), "Real Madridddddddddd",  new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4),  new Integer(5),  new Integer(6), null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Lp.", "Team", "Played", "Won", "Drawn", "Lost", "Scored", "Conceded", "Points"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        league_table.setAutoscrolls(false);
-        league_table.setRowHeight(20);
-        league_table.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(league_table);
-        if (league_table.getColumnModel().getColumnCount() > 0) {
-            league_table.getColumnModel().getColumn(0).setResizable(false);
-            league_table.getColumnModel().getColumn(0).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(1).setResizable(false);
-            league_table.getColumnModel().getColumn(1).setPreferredWidth(300);
-            league_table.getColumnModel().getColumn(2).setResizable(false);
-            league_table.getColumnModel().getColumn(2).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(3).setResizable(false);
-            league_table.getColumnModel().getColumn(3).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(4).setResizable(false);
-            league_table.getColumnModel().getColumn(4).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(5).setResizable(false);
-            league_table.getColumnModel().getColumn(5).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(6).setResizable(false);
-            league_table.getColumnModel().getColumn(6).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(7).setResizable(false);
-            league_table.getColumnModel().getColumn(7).setPreferredWidth(50);
-            league_table.getColumnModel().getColumn(8).setResizable(false);
-            league_table.getColumnModel().getColumn(8).setPreferredWidth(50);
-        }
-
-        button_start.setText("Start");
-        button_start.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_startActionPerformed(evt);
-            }
-        });
-
-        button_exit.setText("Exit");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(button_start, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button_start, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Table", jPanel1);
-
-        jLabel1.setText("Choose day:");
-
-        combo_gameweek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        combo_gameweek.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_gameweekActionPerformed(evt);
-            }
-        });
-
-        table_results.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "", "", "", ""
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table_results.setRequestFocusEnabled(false);
-        table_results.setRowHeight(40);
-        jScrollPane3.setViewportView(table_results);
-        if (table_results.getColumnModel().getColumnCount() > 0) {
-            table_results.getColumnModel().getColumn(0).setResizable(false);
-            table_results.getColumnModel().getColumn(0).setPreferredWidth(300);
-            table_results.getColumnModel().getColumn(1).setResizable(false);
-            table_results.getColumnModel().getColumn(1).setPreferredWidth(50);
-            table_results.getColumnModel().getColumn(2).setResizable(false);
-            table_results.getColumnModel().getColumn(2).setPreferredWidth(50);
-            table_results.getColumnModel().getColumn(3).setResizable(false);
-            table_results.getColumnModel().getColumn(3).setPreferredWidth(300);
-        }
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
-                        .addComponent(combo_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addContainerGap())))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Results", jPanel2);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Current gameweek:");
@@ -686,6 +500,205 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Panel", jPanel3);
 
+        jLabel1.setText("Choose day:");
+
+        combo_gameweek.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        combo_gameweek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_gameweekActionPerformed(evt);
+            }
+        });
+
+        table_results.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "", "", "", ""
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table_results.setRequestFocusEnabled(false);
+        table_results.setRowHeight(40);
+        jScrollPane3.setViewportView(table_results);
+        if (table_results.getColumnModel().getColumnCount() > 0) {
+            table_results.getColumnModel().getColumn(0).setResizable(false);
+            table_results.getColumnModel().getColumn(0).setPreferredWidth(300);
+            table_results.getColumnModel().getColumn(1).setResizable(false);
+            table_results.getColumnModel().getColumn(1).setPreferredWidth(50);
+            table_results.getColumnModel().getColumn(2).setResizable(false);
+            table_results.getColumnModel().getColumn(2).setPreferredWidth(50);
+            table_results.getColumnModel().getColumn(3).setResizable(false);
+            table_results.getColumnModel().getColumn(3).setPreferredWidth(300);
+        }
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
+                        .addComponent(combo_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3)
+                        .addContainerGap())))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_gameweek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Results", jPanel2);
+
+        league_table.setAutoCreateRowSorter(true);
+        league_table.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        league_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1), "Real Madridddddddddd",  new Integer(1),  new Integer(2),  new Integer(3),  new Integer(4),  new Integer(5),  new Integer(6), null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Lp.", "Team", "Played", "Won", "Drawn", "Lost", "Scored", "Conceded", "Points"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        league_table.setAutoscrolls(false);
+        league_table.setRowHeight(20);
+        league_table.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(league_table);
+        if (league_table.getColumnModel().getColumnCount() > 0) {
+            league_table.getColumnModel().getColumn(0).setResizable(false);
+            league_table.getColumnModel().getColumn(0).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(1).setResizable(false);
+            league_table.getColumnModel().getColumn(1).setPreferredWidth(300);
+            league_table.getColumnModel().getColumn(2).setResizable(false);
+            league_table.getColumnModel().getColumn(2).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(3).setResizable(false);
+            league_table.getColumnModel().getColumn(3).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(4).setResizable(false);
+            league_table.getColumnModel().getColumn(4).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(5).setResizable(false);
+            league_table.getColumnModel().getColumn(5).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(6).setResizable(false);
+            league_table.getColumnModel().getColumn(6).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(7).setResizable(false);
+            league_table.getColumnModel().getColumn(7).setPreferredWidth(50);
+            league_table.getColumnModel().getColumn(8).setResizable(false);
+            league_table.getColumnModel().getColumn(8).setPreferredWidth(50);
+        }
+
+        button_start.setText("Start");
+        button_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_startActionPerformed(evt);
+            }
+        });
+
+        button_exit.setText("Exit");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(button_start, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_start, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Table", jPanel1);
+
+        pane_formations.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pane_formationsStateChanged(evt);
+            }
+        });
+
         button_gk_442.setText("Goalkeeper");
         button_gk_442.setMargin(null);
 
@@ -774,7 +787,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("4-4-2", pane_442);
+        pane_formations.addTab("4-4-2", pane_442);
 
         button_cam_433.setText("jButton1");
 
@@ -865,7 +878,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("4-3-3", pane_443);
+        pane_formations.addTab("4-3-3", pane_443);
 
         button_lm_4231.setText("jButton1");
 
@@ -960,7 +973,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("4-2-3-1", pane_4231);
+        pane_formations.addTab("4-2-3-1", pane_4231);
 
         button_cm1_4321.setText("5");
 
@@ -1056,7 +1069,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("4-3-2-1", pane_4321);
+        pane_formations.addTab("4-3-2-1", pane_4321);
 
         button_cm1_451.setText("jButton1");
 
@@ -1114,12 +1127,12 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGap(121, 121, 121))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
                                 .addComponent(button_st_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(118, 118, 118))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
-                        .addComponent(button_lm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(button_rm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
+                                .addGap(118, 118, 118))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_451Layout.createSequentialGroup()
+                                .addComponent(button_lm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(button_rm_451, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)))))
                 .addContainerGap())
         );
         pane_451Layout.setVerticalGroup(
@@ -1150,7 +1163,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("4-5-1", pane_451);
+        pane_formations.addTab("4-5-1", pane_451);
 
         button_cb1_343.setText("jButton1");
 
@@ -1243,7 +1256,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("3-4-3", pane_343);
+        pane_formations.addTab("3-4-3", pane_343);
 
         button_cb1_352.setText("jButton1");
 
@@ -1290,14 +1303,16 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(button_cm2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
-                        .addGap(0, 115, Short.MAX_VALUE)
-                        .addComponent(button_cam_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
-                        .addComponent(button_st1_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button_st2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pane_352Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                                .addComponent(button_cam_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pane_352Layout.createSequentialGroup()
+                                .addComponent(button_st1_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(button_st2_352, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)))))
                 .addContainerGap())
             .addGroup(pane_352Layout.createSequentialGroup()
                 .addGap(121, 121, 121)
@@ -1334,7 +1349,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("3-5-2", pane_352);
+        pane_formations.addTab("3-5-2", pane_352);
 
         button_lm_541.setText("jButton1");
 
@@ -1375,14 +1390,13 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button_rm_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
                                 .addComponent(button_cb1_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
                                 .addComponent(button_cb3_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
                                 .addComponent(button_cm1_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
                                 .addComponent(button_cm2_541, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1428,7 +1442,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("5-4-1", jPanel13);
+        pane_formations.addTab("5-4-1", jPanel13);
 
         button_cm1_532.setText("jButton1");
 
@@ -1521,7 +1535,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("5-3-2", pane_532);
+        pane_formations.addTab("5-3-2", pane_532);
 
         button_cm1_5221.setText("jButton1");
 
@@ -1613,7 +1627,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pane_541.addTab("5-2-2-1", pane_5221);
+        pane_formations.addTab("5-2-2-1", pane_5221);
 
         button_save_team.setText("Save team");
         button_save_team.addActionListener(new java.awt.event.ActionListener() {
@@ -1622,12 +1636,24 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        list_substitutions.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "6", "7" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
+        list_substitutions.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                list_substitutionsValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(list_substitutions);
+
+        list_rest.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        list_others.setViewportView(list_rest);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1637,34 +1663,124 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(button_save_team, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pane_541))
+                    .addComponent(pane_formations))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(list_others))
                 .addContainerGap(246, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pane_541, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pane_formations, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(list_others)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_save_team, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        pane_541.getAccessibleContext().setAccessibleName("");
+        pane_formations.getAccessibleContext().setAccessibleName("");
 
-        jTabbedPane1.addTab("Play Match!", jPanel5);
+        jTabbedPane1.addTab("Team management", jPanel5);
+
+        table_match.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        table_match.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Team Home", "-", "-", "Team Away"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table_match.setRowHeight(36);
+        table_match.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(table_match);
+        if (table_match.getColumnModel().getColumnCount() > 0) {
+            table_match.getColumnModel().getColumn(0).setResizable(false);
+            table_match.getColumnModel().getColumn(0).setPreferredWidth(500);
+            table_match.getColumnModel().getColumn(1).setResizable(false);
+            table_match.getColumnModel().getColumn(1).setPreferredWidth(100);
+            table_match.getColumnModel().getColumn(2).setResizable(false);
+            table_match.getColumnModel().getColumn(2).setPreferredWidth(100);
+            table_match.getColumnModel().getColumn(3).setResizable(false);
+            table_match.getColumnModel().getColumn(3).setPreferredWidth(500);
+        }
+
+        button_pause.setText("Start");
+        button_pause.setToolTipText("");
+        button_pause.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_pauseActionPerformed(evt);
+            }
+        });
+
+        button_exit_match.setText("Exit match");
+        button_exit_match.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_exit_matchActionPerformed(evt);
+            }
+        });
+
+        label_minute.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        label_minute.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_minute.setText("1'");
+
+        javax.swing.GroupLayout pane_play_matchLayout = new javax.swing.GroupLayout(pane_play_match);
+        pane_play_match.setLayout(pane_play_matchLayout);
+        pane_play_matchLayout.setHorizontalGroup(
+            pane_play_matchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_play_matchLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pane_play_matchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addGroup(pane_play_matchLayout.createSequentialGroup()
+                        .addComponent(button_pause, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addComponent(button_exit_match, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(pane_play_matchLayout.createSequentialGroup()
+                .addGap(323, 323, 323)
+                .addComponent(label_minute, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pane_play_matchLayout.setVerticalGroup(
+            pane_play_matchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pane_play_matchLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(label_minute, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pane_play_matchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_pause, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_exit_match, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Play Match", pane_play_match);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1676,9 +1792,9 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     private int findPlayersIndex(String name){
+    private int findPlayersIndex(String name){
         for(int i=0; i<11; i++){
-            if(teams[0].getMatchUp2(i).getSurname().equals(name) || teams[0].getMatchUp2(i).getName().equals(name)){
+            if(selectedTeam.getMatchUp2(i).getSurname().equals(name) || selectedTeam.getMatchUp2(i).getName().equals(name)){
                 return i;
             }
         }
@@ -1686,41 +1802,100 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     private void teamButtonClickActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
         if(selectedPlayerIndex==99) {
             selectedPlayerIndex = findPlayersIndex(evt.getActionCommand());
         }
         else{
-            teams[0].swap(teams[0].getMatchUp2(selectedPlayerIndex),teams[0].getMatchUp2(findPlayersIndex(evt.getActionCommand())));
+            selectedTeam.swap(selectedTeam.getMatchUp2(selectedPlayerIndex),selectedTeam.getMatchUp2(findPlayersIndex(evt.getActionCommand())));
             selectedPlayerIndex=99;
             setButtons();
         }
     }
 
 
-   private void setButtons(){
+   
+    private void setButtons(){
         for(int i=0 ; i<10 ; i++){
             for(int j=0; j<11; j++){
-                if(!teams[0].getMatchUp2(j).getSurname().equals(" ")) {
-                    teamMatchUp[i][j].setText(teams[0].getMatchUp2(j).getSurname());
+                if(!selectedTeam.getMatchUp2(j).getSurname().equals(" ")) {
+                    teamMatchUp[i][j].setText(selectedTeam.getMatchUp2(j).getSurname());
                 }
-                else teamMatchUp[i][j].setText(teams[0].getMatchUp2(j).getName());
+                else teamMatchUp[i][j].setText(selectedTeam.getMatchUp2(j).getName());
             }
         }
     }
-
     private void setButtonsListeners(){
         for(int i=0 ; i<10 ; i++){
             for(int j=0; j<11; j++){
-                    teamMatchUp[i][j].addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                            teamButtonClickActionPerformed(evt);
-                        }
-                    });;
+                teamMatchUp[i][j].addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        teamButtonClickActionPerformed(evt);
+                    }
+                });;
 
             }
         }
     }
+    private void setSubstitutions(){
+        String[] substitutions = new String[7];
+
+        for(int i=0 ; i<7 ; i++){
+            if(!selectedTeam.getSub(i).getSurname().equals("")){
+                substitutions[i] = selectedTeam.getSub(i).getSurname();
+            }
+            else{
+                substitutions[i] = selectedTeam.getSub(i).getName();
+            }
+        }
+        list_substitutions.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = substitutions;
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+
+    }
+ 
+    private void setMatchTable(String[] goal){
+        if(goal!=null) {
+            DefaultTableModel dtm = (DefaultTableModel) table_match.getModel();
+            int goals[] = new int[2];
+            goals[0] = Integer.valueOf(table_match.getColumnModel().getColumn(1).getHeaderValue().toString());
+            goals[1] = Integer.valueOf(table_match.getColumnModel().getColumn(2).getHeaderValue().toString());
+            if (goal[2].equals("Home")) {
+                dtm.addRow(new Object[]{goal[1], goal[0], null, null});
+                goals[0]++;
+            } else {
+                goals[1]++;
+                dtm.addRow(new Object[]{null, null, goal[0], goal[1]});
+            }
+            table_match.setModel(dtm);
+            System.out.println(goals[0] +" "+goals[1]);
+            table_match.getColumnModel().getColumn(1).setHeaderValue(goals[0]);
+            table_match.getColumnModel().getColumn(2).setHeaderValue(goals[1]);
+            table_match.getTableHeader().repaint();
+        }
+        else{
+            table_match.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [][] {
+
+                    },
+                    new String [] {
+                            currentGameweekMatch.getHome().getName(), "0", "0", currentGameweekMatch.getAway().getName()
+                    }
+            ) {
+                boolean[] canEdit = new boolean [] {
+                        false, false, false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+        }
+    }
+
+    
     private void button_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_startActionPerformed
        
     }//GEN-LAST:event_button_startActionPerformed
@@ -1733,387 +1908,99 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_gameweekActionPerformed
 
     private void button_play_matchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_play_matchActionPerformed
+        jTabbedPane1.setSelectedIndex(4);
+        jTabbedPane1.setEnabledAt(0,false);
+        jTabbedPane1.setEnabledAt(1,false);
+        jTabbedPane1.setEnabledAt(2,false);
+        jTabbedPane1.setEnabledAt(3,false);
+        jTabbedPane1.setEnabledAt(4,true);
+
+        button_exit_match.setEnabled(false);
+        button_pause.setEnabled(true);
+        button_pause.setText("Start Match");
+
+        currentGameweekMatch = findMatch(fixtures[day-1].getMatches());
+        setMatchTable(null);
+
         ArrayList<Match> matches = fixtures[day-1].getMatches();
         for(int i=0 ; i<matches.size(); i++){
-            matches.get(i).playMatch();
+            if(!matches.get(i).equals(currentGameweekMatch)) {
+                matches.get(i).playMatch();
+            }
         }
-        setTable();
         day++;
-        label_gameweek.setText(String.valueOf(day));
-        setGameweekMatches();
+        sumUpDay();
+        label_minute.setText("0");
     }//GEN-LAST:event_button_play_matchActionPerformed
 
     private void button_save_teamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_save_teamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_button_save_teamActionPerformed
 
+    private void list_substitutionsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_list_substitutionsValueChanged
+         if(selectedPlayerIndex!=99){
+            selectedTeam.substitution(selectedTeam.getSub(list_substitutions.getSelectedIndex()),selectedTeam.getMatchUp2(selectedPlayerIndex));
+            selectedPlayerIndex=99;
+            setButtons();
+            setSubstitutions();
+        }
+    }//GEN-LAST:event_list_substitutionsValueChanged
+
+    private void button_pauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_pauseActionPerformed
+        button_pause.setText("Pause");
+        playMatch(currentGameweekMatch);
+    }//GEN-LAST:event_button_pauseActionPerformed
+
+    private void pane_formationsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pane_formationsStateChanged
+        System.out.println(pane_formations.getSelectedIndex());
+    }//GEN-LAST:event_pane_formationsStateChanged
+
+    private void button_exit_matchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_exit_matchActionPerformed
+         jTabbedPane1.setEnabledAt(0,true);
+        jTabbedPane1.setEnabledAt(1,true);
+        jTabbedPane1.setEnabledAt(2,true);
+        jTabbedPane1.setEnabledAt(3,true);
+        jTabbedPane1.setEnabledAt(4,false);
+        jTabbedPane1.setSelectedIndex(0);
+        button_pause.setEnabled(true);
+        button_exit.setEnabled(false);
+        currentGameweekMatch.sumUp();
+    }//GEN-LAST:event_button_exit_matchActionPerformed
+
+    private void sumUpDay(){
+        setTable();
+        label_gameweek.setText(String.valueOf(day));
+        setGameweekMatches();
+        setGameweekPanel();
+        setGameweekMatchesResults();
+    }
+    private void playMatch(Match m){
+        Runnable r=() -> {
+            try {
+                for (int i = 0; i <= m.getTime(); i++) {
+                    String[] goal = m.matchEngineFormatter();
+                    if (goal != null) {
+                        setMatchTable(goal);
+                    }
+                    label_minute.setText(String.valueOf(i));
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) {
+            }
+        };
+        label_minute.setText("Match finished");
+        button_exit.setEnabled(true);
+        sumUpDay();
+    }
     /**
      * @param args the command line arguments
      */
-    
-    public void initTeams(){
-        Position GK = new Position("GK","C","D");
-        Position CB = new Position("B","C","D");
-        Position RB = new Position("B","R","D");
-        Position LB = new Position("B","L","D");
-        Position CM = new Position("M","C","E");
-        Position CDM = new Position("M","C","D");
-        Position CAM = new Position("M","C","O");
-        Position ST = new Position("A","C","O");
-        Position RW = new Position("A","R","O");
-        Position LW = new Position("A","L","O");
-        Position LWB = new Position("B","L","E");
-        Position RWB = new Position("B","R","E");
-        Position RM = new Position("M","R","E");
-        Position LM = new Position("M","L","E");
-
-
-        ArrayList <Formation> formations= new ArrayList<>();
-        formations.add(new Formation("4-4-2",GK,LB,CB,CB,RB,LM,CM,CM,RM,ST,ST));
-        formations.add(new Formation("4-3-3",GK,LB,CB,CB,RB,LM,CAM,RM,LW,RW,ST));
-        formations.add(new Formation("4-2-3-1",GK,LB,CB,CB,RB,CM,CM,RM,LM,CAM,ST));
-        formations.add(new Formation("4-3-2-1",GK,LB,CB,CB,RB,CM,CM,CM,RW,LW,ST));
-        formations.add(new Formation("4-5-1",GK,LB,CB,CB,RB,LM,CM,CM,RM,CM,ST));
-        formations.add(new Formation("3-4-3",GK,CB,CB,CB,CM,LM,CM,RW,RM,LW,ST));
-        formations.add(new Formation("3-5-2",GK,CB,CB,CB,RM,CM,CM,CAM,LM,ST,ST));
-        formations.add(new Formation("5-4-1",GK,LB,CB,CB,CB,RB,CM,CM,RM,LM,ST));
-        formations.add(new Formation("5-3-2",GK,LB,CB,CB,CB,RB,CM,CM,CM,ST,ST));
-        formations.add(new Formation("5-2-2-1",GK,LWB,CB,CB,RWB,CB,CM,CM,RW,LW,ST));
-
-
-
-        // tworzenie zawodników
-        Player zero= new Player ("","",GK,0,0);
-        Player KNavas=new Player("Keylor", "Navas", GK ,1, 84);
-        Player Marcelo=new Player("Marcelo", " ", LB, 3, 84);
-        Player SRamos=new Player("Sergio", "Ramos", CB, 4, 89);
-        Player Pepe=new Player("Pepe", " ", CB, 5, 84);
-        Player DCarvajal=new Player("Dani", "Carvajal", RB, 63, 83);
-        Player TKroos=new Player("Toni", "Kroos", CM,6, 86);
-        Player LModric=new Player("Luca", "Modric", CM,18, 90);
-        Player JRodriguez=new Player("James", "Rodriguez", CAM, 10, 84);
-        Player CRonaldo=new Player("Cristiano", "Ronaldo", ST, 7, 96);
-        Player GBale=new Player("Gareth", "Bale", RW,11, 92);
-        Player AMorata=new Player("Alvaro", "Morata", ST, 19, 85);
-        Player KBenzema = new Player("Karim","Benzema",ST,9,87);
-        Player Isco = new Player("Isco","",CAM,22,86);
-        Player Casemiro = new Player("Casemiro","",CM,21,82);
-        Player MAsensio= new Player("Marco","Asensio",CAM,20,83);
-        Player LVasquez= new Player("Lucas","Vasquez",LW,18,82);
-        Player RVarane= new Player("Raphael", "Varane",CB, 14,84);
-        Player KCas = new Player ("Kiko","Casilla",GK, 93,78);
-
-        Player TStegen=new Player("Ter", "Stegen", GK, 1, 80);
-        Player JAlba=new Player("Jordi", "Alba", LB,2, 83);
-        Player GPique=new Player("Gerrard", "Pique", CB, 4, 84);
-        Player JMascherano=new Player("Javier", "Mascherano", CB,5, 83);
-        Player SRoberto=new Player("Sergi", "Roberto", RB, 3, 80);
-        Player SBusquets=new Player("Sergio", "Busquets", CDM, 6, 86);
-        Player IRakitic=new Player("Ivan", "Rakitic", CM, 8, 85);
-        Player AIniesta=new Player("Andres", "Iniesta", CAM, 12, 88);
-        Player LMessi=new Player("Lionel", "Messi", ST,10, 95);
-        Player LSuarez=new Player("Luis", "Suarez", ST, 9, 92);
-        Player Neymar=new Player("Neymar", "Jr", ST, 11, 93);
-
-        Player SUmtiti= new Player("Samuel","Umtitti",CB,13,83);
-        Player AGomes= new Player("Andre","Gomes",CM,14,79);
-        Player PAlcacer = new Player("Paco","Alcacer",ST,15,82);
-
-        Player CBravo=new Player("Claudio", "Bravo", GK, 1, 82);
-        Player GClichy=new Player("Gael", "Clichy", LB, 22, 82);
-        Player PZabaleta=new Player("Pablo", "Zabaleta", RB, 5, 85);
-        Player JStones=new Player("John", "Stones", CB,11,81 );
-        Player NOtamendi=new Player("Nicolas", "Otamendi", CB,30, 84);
-        Player DSilva=new Player("David", "Silva", CAM,21, 88);
-        Player Fernandinho=new Player("", "Fernandinho", CDM,22, 85);
-        Player Fernando=new Player("Fernando", "", CDM, 6, 83);
-        Player KDBruyne=new Player("Kevin", "De Bruyne", CAM, 17, 90);
-        Player RSterling=new Player("Raheem", "Sterling", ST, 7, 87);
-        Player SAguero=new Player("Sergio", "Aguero", ST, 9, 90);
-        Player WCaballero= new Player("Willy","Caballero",GK,12,82);
-        Player VKompany = new Player("Vincent","Kompany",CB,4,84);
-        Player LSane = new Player("Leroy","Sane",RW,19,85);
-        Player GJesus= new Player("Gabriel", "Jesus",ST,33,85);
-        Player Nolito= new Player("Nolito","",LW,28,80);
-        Player BSagna= new Player("Bacary","Sagna",RB,2,79);
-        Player AKolarov= new Player("Aleksandar","Kolarov",LB,30,79);
-
-        Player PCech=new Player("Petr", "Čech", GK, 33, 88);
-        Player NMonreal=new Player("Nacho", "Monreal", LB, 18, 81);
-        Player LKoscielny=new Player("Laurent", "Koscielny", CB, 6, 85);
-        Player GPaulista=new Player("Gabriel", "Paulista", CB, 5, 84);
-        Player HBellerín=new Player("Hector", "Bellerín	", RB, 24, 85);
-        Player MÖzil=new Player("Mesut", "Özil", CAM, 11, 89);
-        Player FCoquelin=new Player("Francis", "Coquelin", CDM, 34, 84);
-        Player GXhaka=new Player("Granit", "Xhaka", CM, 29, 83);
-        Player TWalcott=new Player("Theo", "Walcott", ST, 14, 86);
-        Player ASánchez=new Player("Alexis", "Sánchez", ST, 7, 90);
-        Player AIwobi=new Player("Alex", "Iwobi", CM, 17, 83);
-        Player DOspina = new Player("David","Ospina",GK,12,82);
-        Player ARamsey = new Player("Aaron","Ramsey",CM,8,83);
-        Player OGiroud=  new Player("Oliver","Giroud",ST,9,84);
-        Player Mustafi= new Player("","Mustafi",CB,15,83);
-        Player AOChamberlain= new Player("Alex","Oxlade-Chamberlain",RW,20,82);
-        Player LPerez= new Player("Lucas","Perez",ST,40,84);
-        Player KGibbs=new Player("Keiran","Gibbs",RB,16,79);
-
-        Player TCourtois=new Player("Thibout", "Courtois", GK, 13, 89);
-        Player CAzpilicueta=new Player("Cesar", "Azpilicueta", CB, 28, 85);
-        Player GCahill=new Player("Gary", "Cahill", CB,24, 83);
-        Player DLuiz=new Player("David", "Luiz", CB, 30, 84);
-        Player VMoses=new Player("Victor", "Moses", LB, 20, 83);
-        Player MAlonso=new Player("Marcos", "Alonso", RB,3, 83);
-        Player NKante=new Player("N'golo", "Kante", CDM, 7, 86);
-        Player NMatic=new Player("Nemanja", "Matic", CDM, 6, 85);
-        Player PRodriguez=new Player("Pedro", "Rodriguez", RW, 11, 86);
-        Player EHazard=new Player("Eden", "Hazard", LW,10, 90);
-        Player DCosta=new Player("Diego", "Costa", ST, 9, 88);
-
-
-        Player MNeuer=new Player("Manuel", "Neuer", GK, 1, 89);
-        Player DAlaba=new Player("David", "Alaba", LB, 2, 84);
-        Player MHummels=new Player("Mats", "Hummels", CB, 3, 86);
-        Player JBoateng=new Player("Jerome", "Boateng", CB, 17, 86);
-        Player JKimmich=new Player("Joshua", "Kimmich", RB, 4, 83);
-        Player XAlonso=new Player("Xabi", "Alonso", CDM, 5, 83);
-        Player AVidal=new Player("Arturo", "Vidal", CM, 6, 86);
-        Player TMuller=new Player("Thomas", "Muller", CAM, 10, 85);
-        Player DGCosta=new Player("Douglas", "Costa", LW, 7, 84);
-        Player ARobben=new Player("Arjen", "Robben", RW, 11, 85);
-        Player RLewandowski=new Player("Robert", "Lewandowski", ST, 9, 90);
-
-        Player PReina = new Player("Pepe","Reina",GK,12,79);
-        Player FRibery = new Player("Franck","Ribery",LW,18,85);
-        Player KComan= new Player("Kingsley","Coman",RW,19,83);
-        Player JMartinez= new Player("Javi","Martinez",CDM,24,82);
-        Player RSanches= new Player("Renato","Sanches",CM,20,82);
-
-
-        Player Trapp=new Player("Trapp", "", GK, 1, 85);
-        Player TSilva=new Player("Thiago", "Silva", CB, 2, 88);
-        Player Marquinios=new Player("Marquinios", "", CB,5, 83);
-        Player Meunier=new Player("Meunier", "Thoms", LB,12, 82);
-        Player Kurzawa=new Player("Kurzawa", "", RB, 20, 83);
-        Player BMatuidi=new Player("Blaise", "Matuidi", CDM,14, 86);
-        Player GKrychowiak=new Player("Grzegorz", "Krychowiak", CDM, 8, 85);
-        Player MVeratti=new Player("Marco", "Veratti", CAM, 6, 86);
-        Player LMoura=new Player("Lucas", "Moura", RW, 7, 85);
-        Player ECavani=new Player("Edinson", "Cavani", ST, 9, 88);
-        Player CNkunku=new Player("Cristian", "Nkunku", CAM, 6, 86);
-        Player DSubasic=new Player("Danjel","Subasic",GK,1,82);
-        Player ARaggi=new Player("Andrea","Raggi ",CB,5,82);
-        Player KGlik=new Player("Kamil","Glik",CB,4,86);
-        Player Jemerson=new Player("Jemerson","",RB,2,81);
-        Player YCissokho=new Player("Yarouba","Cissokho",LB,3,77);
-        Player Bakayoko=new Player("","Bakayoko",CDM,10,85);
-        Player JMoutinho=new Player("Joao","Moutinho",CM,8,84);
-        Player TLemar=new Player("Thomas","Lemar",CM,6,83);
-        Player BSilva=new Player("Bernardo","Silva",CAM,7,84);
-        Player KMbappe=new Player("Kyllian","Mbappe",ST,11,86);
-        Player RFalcao=new Player("Radamel","Falcao",ST,9,86);
-        Player HLloris=new Player("Hugo","Lloris",GK,1,88);
-        Player TAlderweireld=new Player("Toby","Alderweireld",CB,4,85);
-        Player JVertonghen=new Player("Jan","Vertonghen",CB,5,83);
-        Player KWalker=new Player("Kyle","Walker",RB,3,81);
-        Player DRose=new Player("Danny","Rose",LB,2,83);
-        Player MDembele=new Player("Moussa","Dembele",CM,7,85);
-        Player VWanyama=new Player("Victor","Wanyama",CM,8,86);
-        Player DAlli=new Player("Delle","Alli",CAM,11,84);
-        Player SHueng=new Player("Son","Hueng",ST,10,83);
-        Player HKane=new Player("Harry","Kane",ST,9,85);
-        Player CEriksen=new Player("Cristian","Eriksen",CAM,10,84);
-        Player Burki=new Player("Burki","",GK,1,81);
-        Player SPapasdopulos=new Player("Sokratis","Papasdopulos",CB,4,84);
-        Player LPiszczek=new Player("Lukasz","Piszczek",RB,3,82);
-        Player MBartra=new Player("Marc","Bartra",CB,5,81);
-        Player CPulisic=new Player("Christian","Pulisic",LB,2,80);
-        Player SKagawa=new Player("Shinji","Kagawa",CM,8,83);
-        Player MGoetze=new Player("Mario","Goetze",CAM,7,84);
-        Player ASchurrle=new Player("Andre","Schurrle",CAM,8,81);
-        Player ODembele=new Player("Osama","Dembele",RW,10,81);
-        Player Reus=new Player("Marco","Reus",LW,11,88);
-        Player PAubameyang=new Player("Pierre-Emerick","Aubameyang",ST,9,87);
-        Player JOblak=new Player("Jan","Oblak",GK,1,87);
-        Player DGodin=new Player("Diego","Godin",CB,3,88);
-        Player FLuis=new Player("Felipe","Luis",LB,4,85);
-        Player Savic=new Player("Savic","",CB,5,83);
-        Player Juanfran=new Player("Juanfran","",RB,2,83);
-        Player MGaitan=new Player("Marcos","Gaitan",CM,7,85);
-        Player YCarrasco=new Player("Yannick","Carrasco",CM,8,82);
-        Player Gabi=new Player("Gabi","",CM,6,82);
-        Player Koke=new Player("Koke","",CM,10,84);
-        Player AGriezmann=new Player("Antoine","Griezmann",ST,11,88);
-        Player FTorres=new Player("Fernando","Torres",ST,9,81);
-        Player TShinhan=new Player("Tien","Shinhan ",GK,1,82);
-        Player Yamcha=new Player("Yamcha"," ",CB,5,81);
-        Player Krillin=new Player("Krillin"," ",CB,4,82);
-        Player Roshi=new Player("Master","Roshi ",LB,3,81);
-        Player Whis=new Player("Whis"," ",RB,2,99);
-        Player Piccolo=new Player("Piccolo"," ",CM,6,84);
-        Player Trunks=new Player("Trunks"," ",CAM,7,83);
-        Player Goten=new Player("Goten"," ",CDM,8,83);
-        Player Vegeta=new Player("Vegeta"," ",LW,9,95);
-        Player Goku=new Player("Goku"," ",ST,10,94);
-        Player Beerus=new Player("Beerus"," ",RW,11,97);
-        Player Jamemba=new Player("Jamemba"," ",GK,1,89);
-        Player Turles=new Player("Turles"," ",CB,2,70);
-        Player Brolly=new Player("Brolly"," ",CB,3,93);
-        Player Nappa=new Player("Nappa"," ",CB,4,75);
-        Player Cell=new Player("Cell"," ",RB,5,89);
-        Player Buu=new Player("Buu"," ",LB,6,93);
-        Player Frieza=new Player("Frieza"," ",CM,7,87);
-        Player Android=new Player("Android","17 ",CM,17,87);
-        Player Black=new Player("Black","",CAM,9,94);
-        Player Zamasu=new Player("Zamasu"," ",CAM,11,89);
-        Player Ginyu=new Player("Ginyu"," ",ST,10,80);
-        //Superstarr
-        Player HBajda=new Player("Henryk","Bajda",GK,1,84);
-        Player SJach=new Player("Stanisław 'Stajku'","Jach",CB,2,90);
-        Player APastuszek=new Player("Adam 'Chomik'","Pastuszek",CB,4,90);
-        Player HMinus=new Player("Herkules","Minus",CB,3,83);
-        Player BBolek=new Player("Bolek","",LB,5,83);
-        Player FGerula=new Player("Florian","Gerula",RB,6,86);
-        Player MGerula=new Player("Marian","Gerula",CM,7,86);
-        Player CGerula=new Player("Czesław","Gerula",CM,8,86);
-        Player JSzpytman=new Player("Jarosław 'Pitas'","Szpytman",CM,23,89);
-        Player KWojtowicz=new Player("Kamil 'Kombajn'","Wojtowicz",ST,10,87);
-        Player ŁJach=new Player("Łukasz Kryminał","Jach",ST,9,87);
-        // Huragan
-        Player MDaraz=new Player("Maciej", "Daraz", GK, 12, 87);
-        Player MZatawrdnicki=new Player("Maciej", "Zatawrdnicki", CB, 2, 83);
-        Player BZatwardnicki=new Player("Bartosz", "Zatwardnicki", CB, 4, 90);
-        Player DMazur=new Player("Damian", "Mazur", LB, 3, 89);
-        Player KLewiarz=new Player("Krzysztof", "Lewiarz", RB, 11, 88);
-        Player DFudali=new Player("Daniel", "Fudali", CDM,6, 90);
-        Player BFrosztega=new Player("Bartosz", "Frosztega", CM,13, 83);
-        Player LPawlowski=new Player("Łukasz", "Pawłowski", RW, 19, 90);
-        Player DPawlowski=new Player("Daniel", "Pawłowski", CAM, 10, 90);
-        Player BDzimira=new Player("Bogumił", "Dzimira", ST,9, 91);
-        Player APawlowski=new Player("Arkadiusz", "Pawłowski", LW, 7, 94);
-        // Legends
-        Player GBednarczyk=new Player("Grzegorz","Bednarczyk",GK,12,87);
-        Player MGłuszko=new Player("Mieczysław","Głuszko",LB,3,86);
-        Player MPawłowski=new Player("Marian","Pawłowski",CB,2,85);
-        Player PDzidek=new Player("Paweł","Dzidek",CB,3,87);
-        Player ZPawłowski=new Player("Zenon","Pawłowski",RB,5,84);
-        Player EFudali=new Player("Edward","Fudali",CDM,7,84);
-        Player DSzpytman=new Player("Dawid","Szpytman",CDM,8,85);
-        Player STomaszewski=new Player("Szymon ","Tomaszewski",CAM,10,94);
-        Player LChorbowy=new Player("Leon","Chorbowy",CAM,4,88);
-        Player MSzpytman=new Player("Marek","Szpytman",CAM,88,85);
-        Player WBajda=new Player("Wiesław","Bajda",ST,11,87);
-        Player LDaraż=new Player("Łukasz","Daraż",CB,70,86);
-        Player DGłowacz=new Player("Dawid","Głowacz",RM,8,85);
-        Player AWanat= new Player("Arkadiusz","Wanat",CM,96,84);
-        Player MPawlowski= new Player("Marcin","Pawłowski",LB,25,87);
-        Player MBus= new Player("Mateusz","Buś",CB,74,85);
-        Player JKwasny=new Player("Józef","Kwaśny",GK,1,87);
-        Player KPastuszek= new Player("Kacper","Pastuszek",ST,69,84);
-        Player BBajda=new Player("Bartosz","Bajda",CB,22,79);
-        Player JGerula=new Player("Jacek","Gerula",ST,9,86);
-        Player PGerula=new Player("Piotr","Gerula",ST,19,88);
-        Player JBajda=new Player("Jarosław","Bajda",CB,26,84);
-        Player DBochenek= new Player("Damian","Bochenek",CB,14,89);
-        Player PMikita= new Player("Piotr","Mikita",CDM,30,79);
-        Player EKowalinski= new Player("Eugeniusz","Kowaliński",RB,32,80);
-        Player JGluszko=new Player("Jarosław","Głuszko",CM,18,87);
-        Player KZabawski= new Player("Krystian","Zabawski",CM,42,87);
-        Player DZabawski= new Player("Damian","Zabawski",CB,41,80);
-        Player SFednar= new Player("Sylwester","Fednar",RM,21,80);
-        Player MFednar= new Player("Marcin","Fednar",CM,17,82);
-        Player DSwist= new Player("Dominik","Swist",RW,27,85);
-        Player MSwist= new Player("Mateusz","Swist",LW,28,86);
-        Player ABegovic = new Player("Asmir","Begovic",GK,1,81);
-        Player KZouma = new Player("Kurt","Zouma",CB,4,80);
-        Player CFabregas = new Player("Cesc","Fabregas",CM,4,83);
-        Player Willian = new Player("Willian","",RW,22,85);
-        Player NAke = new Player("Nathan","Ake",RB,12,77);
-        Player MBatshuai = new Player("Michy","Batshuai",ST,19,81);
-        Player RLCheek = new Player("Ruben","Loftus-Cheek",CM,20,79);
-
-
-        // stworzenie tablicy zespołów i przypisanie do niej zespołów (pozycja [16] jest pozycją buforową aby w późniejszym etapie możliwe były zmiany pozycji zespołów w tablicy)
-        teams = new Team[16];
-        teams[0]=new Team("Real Madrid      ","Spain", formations.get(0),KNavas,	Marcelo,SRamos,Pepe,DCarvajal,TKroos,LModric,JRodriguez,CRonaldo,GBale,AMorata);
-        teams[1]=new Team( "FC Barcelona     ", "Spain",formations.get(0), TStegen,JAlba,GPique,JMascherano,SRoberto,SBusquets,IRakitic,AIniesta,LMessi,LSuarez,Neymar);
-        teams[2]=new Team( "Huragan Reczpol  ", "Poland",formations.get(2),  MDaraz,MZatawrdnicki,	BZatwardnicki,DMazur,KLewiarz,DFudali,BFrosztega,LPawlowski,DPawlowski,BDzimira,APawlowski);
-        teams[3]=new Team( "Manchester City  ", "England",formations.get(0),  CBravo,	GClichy,PZabaleta,JStones,NOtamendi,DSilva,Fernandinho,Fernando,KDBruyne,RSterling,SAguero);
-        teams[4]=new Team( "Arsenal FC       ", "England",formations.get(0),  PCech,NMonreal,LKoscielny,GPaulista,	HBellerín,FCoquelin,GXhaka,TWalcott,ASánchez,AIwobi,MÖzil);
-        teams[5]=new Team( "Chelsea FC       ", "England",formations.get(0),  TCourtois,CAzpilicueta,GCahill,DLuiz,VMoses,MAlonso,NKante,NMatic,PRodriguez,EHazard,DCosta);
-        teams[6]=new Team("Bayern Munich    ", "Germany",formations.get(0), MNeuer,	DAlaba,	MHummels,JBoateng,JKimmich,XAlonso,	AVidal,TMuller,DGCosta,ARobben,RLewandowski);
-        teams[7]=new Team("PSG              ","France",formations.get(0), Trapp,	TSilva,	Marquinios,Meunier,Kurzawa,BMatuidi,GKrychowiak,MVeratti,LMoura,	ECavani,CNkunku);
-        teams[8]=new Team("AS Monaco        ","France",formations.get(0),DSubasic,ARaggi,KGlik,Jemerson,YCissokho,Bakayoko,JMoutinho,TLemar,BSilva,	KMbappe,RFalcao);
-        teams[9]=new Team("Tottenham Hotspur","England",formations.get(0), HLloris,TAlderweireld,JVertonghen,KWalker,DRose,MDembele,VWanyama,DAlli,SHueng,	HKane,CEriksen);
-        teams[10]=new Team("Borussia Dortmund","Germany",formations.get(0), Burki,SPapasdopulos,LPiszczek,	MBartra,CPulisic,SKagawa,MGoetze,ASchurrle,ODembele,Reus,PAubameyang);
-        teams[11]=new Team("Atletico Madrid  ", "Spain",formations.get(0), JOblak,	DGodin,	FLuis,Savic,Juanfran,	MGaitan,YCarrasco,Gabi,Koke,AGriezmann,FTorres) ;
-        teams[12]=new Team("DragunboluGut    ","Japan",formations.get(0), TShinhan,Yamcha,Krillin,Roshi,Whis,Piccolo,Trunks,Goten,Vegeta,Goku,Beerus);
-        teams[13]=new Team("DragunboluBat    ","Japan",formations.get(0),Jamemba,Turles,Brolly,Nappa,Cell,Buu,Frieza,Android,Black,Zamasu,Ginyu);
-        teams[14]=new Team("Reczpol Superstar","Poland",formations.get(0), HBajda,SJach,APastuszek,HMinus,BBolek,FGerula,MGerula,CGerula,JSzpytman,KWojtowicz,ŁJach);
-        teams[15]=new Team("Reczpol Legends  ","Poland",formations.get(0),GBednarczyk,MGłuszko,MPawłowski,PDzidek,ZPawłowski,	EFudali,DSzpytman,STomaszewski,LChorbowy,MSzpytman,WBajda);
-
-        teams[0].addPlayer(KCas);
-        teams[0].addPlayer(Isco);
-        teams[0].addPlayer(Casemiro);
-        teams[0].addPlayer(KBenzema);
-        teams[0].addPlayer(MAsensio);
-        teams[0].addPlayer(RVarane);
-        teams[0].addPlayer(LVasquez);
-
-        teams[3].addPlayer(WCaballero);
-        teams[3].addPlayer(BSagna);
-        teams[3].addPlayer(AKolarov);
-        teams[3].addPlayer(LSane);
-        teams[3].addPlayer(Nolito);
-        teams[3].addPlayer(VKompany);
-        teams[3].addPlayer(GJesus);
-
-        teams[4].addPlayer(DOspina);
-        teams[4].addPlayer(KGibbs);
-        teams[4].addPlayer(AOChamberlain);
-        teams[4].addPlayer(LPerez);
-        teams[4].addPlayer(OGiroud);
-        teams[4].addPlayer(Mustafi);
-        teams[4].addPlayer(ARamsey);
-
-
-        teams[5].addPlayer(ABegovic);
-        teams[5].addPlayer(Willian);
-        teams[5].addPlayer(NAke);
-        teams[5].addPlayer(RLCheek);
-        teams[5].addPlayer(CFabregas);
-        teams[5].addPlayer(KZouma);
-        teams[5].addPlayer(MBatshuai);
-
-        teams[2].addPlayer(LDaraż);
-        teams[2].addPlayer(DGłowacz);
-        teams[2].addPlayer(AWanat);
-        teams[2].addPlayer(MPawlowski);
-        teams[2].addPlayer(MBus);
-        teams[2].addPlayer(JKwasny);
-        teams[2].addPlayer(KPastuszek);
-
-        teams[14].addPlayer(BBajda);
-        teams[14].addPlayer(JGerula);
-        teams[14].addPlayer(PGerula);
-        teams[14].addPlayer(JBajda);
-        teams[14].addPlayer(DBochenek);
-        teams[14].addPlayer(PMikita);
-        teams[14].addPlayer(EKowalinski);
-
-        teams[15].addPlayer(JGluszko);
-        teams[15].addPlayer(KZabawski);
-        teams[15].addPlayer(DZabawski);
-        teams[15].addPlayer(SFednar);
-        teams[15].addPlayer(MFednar);
-        teams[15].addPlayer(DSwist);
-        teams[15].addPlayer(MSwist);
-
-        for(int i=0; i<teams.length; i++) teams[i].bestSetUp(formations,false);
-
-
-
+    public void setGameweekMatchesResults(){
+        DefaultTableModel tm = (DefaultTableModel)table_results.getModel();
+        tm.setRowCount(0);
+        for(Match m : fixtures[combo_gameweek.getSelectedIndex()].getMatches())
+            tm.addRow(new Object[]{ m.getHome().getName(),m.getGoalsHome().size(),m.getGoalsAway().size(),m.getAway().getName()});
     }
-
     public void setGameweekMatches(){
         System.out.println(fixtures[day].getMatches().size());
         ArrayList<Match> gameweekMatches=fixtures[day-1].getMatches();
@@ -2122,25 +2009,54 @@ public class NewJFrame extends javax.swing.JFrame {
             gameweekMatchesLabels[2*i+1].setText(gameweekMatches.get(i).getAway().getName());
         }
     }
-   
+    public void setGameweekPanel(){
+        Match match = findMatch(fixtures[day-1].getMatches());
+        if(match.getHome().equals(selectedTeam)){
+            label_opponent.setText(match.getAway().getName());
+            label_home_away.setText("Home");
+        }
+        else{
+            label_opponent.setText(match.getHome().getName());
+            label_home_away.setText("Away");
+        }
+    }
     public void setTable(){
         DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
         tm.setRowCount(0);
-        Arrays.sort(teams, new Comparator<Team>() {
+        Arrays.sort(StartMenu.teams, new Comparator<Team>() {
             @Override
             public int compare(Team t1, Team t2) {
-                return t2.getPoints()-t1.getPoints();
+                if(t2.getPoints()-t1.getPoints() !=0) {
+                    return t2.getPoints() - t1.getPoints();
+                }
+                else if((t2.getScored()-t2.getConceded()) - (t1.getScored()-t1.getConceded()) != 0){
+                    return (t2.getScored()-t2.getConceded()) - (t1.getScored()-t1.getConceded());
+                }
+                else {
+                    return t2.getScored() - t1.getScored();
+                }
+
             }
         });
-        for(int i=0; i<teams.length; i++){
-            Object[] row={i+1,teams[i].getName(),teams[i].getPlayed(),teams[i].getWon(),teams[i].getDrawn(),teams[i].getLost(),teams[i].getScored(),teams[i].getConceded(),teams[i].getPoints()};
+        for(int i=0; i<StartMenu.teams.length; i++){
+            Object[] row={i+1,StartMenu.teams[i].getName(),StartMenu.teams[i].getPlayed(),StartMenu.teams[i].getWon(),StartMenu.teams[i].getDrawn(),StartMenu.teams[i].getLost(),StartMenu.teams[i].getScored(),StartMenu.teams[i].getConceded(),StartMenu.teams[i].getPoints()};
             tm.addRow(row);
         }
         league_table.setModel(tm);
     }
+    public Match findMatch(ArrayList<Match> matches) {
+        for (Match m : matches) {
+            if (m.getHome().equals(selectedTeam) || m.getAway().equals(selectedTeam)) {
+                return m;
+            }
+        }
+        return null;
+    }
     public void initGUI(){
         day=1;
         label_gameweek.setText(String.valueOf(day));
+
+        jTabbedPane1.setEnabledAt(4,false);
 
         teamMatchUp= new JButton[10][11];
         teamMatchUp[1][0]=button_gk_433;
@@ -2256,6 +2172,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setButtons();
         setButtonsListeners();
+        setSubstitutions();
 
         gameweekMatchesLabels = new JLabel[18];
         gameweekMatchesLabels[0] = label_fixture_1_home;
@@ -2279,33 +2196,33 @@ public class NewJFrame extends javax.swing.JFrame {
 
         DefaultTableModel tm = (DefaultTableModel) league_table.getModel();
         tm.setRowCount(0);
-        Arrays.sort(teams, new Comparator<Team>() {
+        Arrays.sort(StartMenu.teams, new Comparator<Team>() {
             @Override
             public int compare(Team t1, Team t2) {
                 return t2.getPoints()-t1.getPoints();
             }
         });
-        for(int i=0; i<teams.length; i++){
-            Object[] row={i+1,teams[i].getName(),teams[i].getPlayed(),teams[i].getWon(),teams[i].getDrawn(),teams[i].getLost(),teams[i].getScored(),teams[i].getConceded(),teams[i].getPoints()};
+        for(int i=0; i<StartMenu.teams.length; i++){
+            Object[] row={i+1,StartMenu.teams[i].getName(),StartMenu.teams[i].getPlayed(),StartMenu.teams[i].getWon(),StartMenu.teams[i].getDrawn(),StartMenu.teams[i].getLost(),StartMenu.teams[i].getScored(),StartMenu.teams[i].getConceded(),StartMenu.teams[i].getPoints()};
             tm.addRow(row);
         }
         league_table.setModel(tm);
 
-        fixtures = new Day[2*teams.length-2];
+        fixtures = new Day[2*StartMenu.teams.length-2];
 
         ArrayList<Team> teamTmp= new ArrayList<>();
-        Collections.addAll(teamTmp,teams);
-        for(int i=0; i<teams.length; i++){
+        Collections.addAll(teamTmp,StartMenu.teams);
+        for(int i=0; i<StartMenu.teams.length; i++){
             System.out.println(teamTmp.get(i).getName());
         }
-        for(int i=0; i<2*teams.length-2; i++){
+        for(int i=0; i<2*StartMenu.teams.length-2; i++){
             ArrayList<Match> dayMatches = new ArrayList<>();
             ArrayList<Match> secondRoundDayMatches = new ArrayList<>();
-            for(int j=0; j<teams.length/2; j++) {
+            for(int j=0; j<StartMenu.teams.length/2; j++) {
                 dayMatches.add(new Match(teamTmp.get(j),teamTmp.get(teamTmp.size()-1-j)));
                 secondRoundDayMatches.add(new Match(teamTmp.get(teamTmp.size()-1-j),teamTmp.get(j)));
             }
-            if(i<teams.length-1) {
+            if(i<StartMenu.teams.length-1) {
                 fixtures[i] = new Day(i+1, dayMatches);
             }
             else{
@@ -2358,9 +2275,10 @@ public class NewJFrame extends javax.swing.JFrame {
         button_start.setEnabled(true);
         table_results.setModel(tmo);
         setGameweekMatches();
+        setGameweekPanel();
 
     }
-     public static ArrayList<Team> rotate(ArrayList<Team> old){
+    public static ArrayList<Team> rotate(ArrayList<Team> old){
         ArrayList<Team> newRotation = new ArrayList<>();
         newRotation.add(old.get(0));
         for(int i=1; i<old.size(); i++){
@@ -2377,38 +2295,6 @@ public class NewJFrame extends javax.swing.JFrame {
         for(int i=0; i<list.size()/2; i++){
             System.out.println(list.get(i).getName()+" "+list.get(list.size()-i-1).getName());
         }
-    }
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewJFrame().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2462,6 +2348,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_cm3_451;
     private javax.swing.JButton button_cm3_532;
     private javax.swing.JButton button_exit;
+    private javax.swing.JButton button_exit_match;
     private javax.swing.JButton button_gk_343;
     private javax.swing.JButton button_gk_352;
     private javax.swing.JButton button_gk_4231;
@@ -2491,6 +2378,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton button_lw_4321;
     private javax.swing.JButton button_lw_433;
     private javax.swing.JButton button_lw_5221;
+    private javax.swing.JButton button_pause;
     private javax.swing.JButton button_play_match;
     private javax.swing.JButton button_rb_4231;
     private javax.swing.JButton button_rb_4321;
@@ -2540,7 +2428,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
@@ -2550,6 +2437,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel label_fixture_1_away;
     private javax.swing.JLabel label_fixture_1_home;
@@ -2571,8 +2459,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel label_fixture_9_home;
     private javax.swing.JLabel label_gameweek;
     private javax.swing.JLabel label_home_away;
+    private javax.swing.JLabel label_minute;
     private javax.swing.JLabel label_opponent;
     private javax.swing.JTable league_table;
+    private javax.swing.JScrollPane list_others;
+    private javax.swing.JList<String> list_rest;
+    private javax.swing.JList<String> list_substitutions;
     private javax.swing.JPanel pane_343;
     private javax.swing.JPanel pane_352;
     private javax.swing.JPanel pane_4231;
@@ -2582,14 +2474,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pane_451;
     private javax.swing.JPanel pane_5221;
     private javax.swing.JPanel pane_532;
-    private javax.swing.JTabbedPane pane_541;
+    private javax.swing.JTabbedPane pane_formations;
+    private javax.swing.JPanel pane_play_match;
+    private javax.swing.JTable table_match;
     private javax.swing.JTable table_results;
     // End of variables declaration//GEN-END:variables
-
-    private Team[] teams;
     private Day[] fixtures;
     private int day;
     private JLabel[] gameweekMatchesLabels;
     private JButton[][] teamMatchUp;
     private int selectedPlayerIndex=99;
+    private Team selectedTeam;
+    private Match currentGameweekMatch;
 }

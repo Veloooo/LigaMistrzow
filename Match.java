@@ -1,6 +1,7 @@
 package javaapplication3;
-
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Match {
 
@@ -9,6 +10,7 @@ public class Match {
     private ArrayList<Goal> goalsHome;
     private ArrayList<Goal> goalsAway;
     private int time;
+    private int currentMinute;
 
     public Match(Team home, Team away) {
         this.home = home;
@@ -16,6 +18,7 @@ public class Match {
         goalsHome= new ArrayList<>();
         goalsAway= new ArrayList<>();
         this.time = 90;
+        this.currentMinute=0;
     }
 
     public Team getHome() {
@@ -34,85 +37,113 @@ public class Match {
         return goalsAway;
     }
 
-    public void playMatch(){
-        home.clearRatios();
-        away.clearRatios();
-        System.out.println("          " + home.getName() + "           " + away.getName());
-        int GoalsHome = 0;
-        int GoalsAway = 0;
-        ArrayList<Integer> minutes =new ArrayList<>();
-        ArrayList<Integer> teamGoal= new ArrayList<>();
-        ArrayList<Integer> scorers=new ArrayList<>();
-        home.getMatchUp();
-        away.getMatchUp();
-        home.calculateRatio(false);
-        away.calculateRatio(false);
-        System.out.println(away.getTeamDefenseRatio()+"    "+home.getTeamDefenseRatio());
-        int goal;
-        for (int i = 1; i < time + 1; i++) {
-            goal = (int) (Math.random() * (away.getTeamDefenseRatio()));
-            for (int j = 0; j < 11; j++) {
-                for (int k = 0; k < (int) (home.getTeamOffensiveRatio(j) / 40); k++) {
-                    int shot = (int) (Math.random() * (1000 + away.getTeamDefenseRatio()));
-                    if (shot == goal) {
-                        goalsHome.add(new Goal(home,home.getMatchUp2(j),i));
-                        GoalsHome++;
-                        minutes.add(i);
-                        teamGoal.add(1);
-                        scorers.add(j);
-                        home.getMatchUp2(j).GoalScored();
-                        System.out.println(i + "'       " + home.getMatchUp2(j).getNumber() + "." + home.getMatchUp2(j).getName() + " " + home.getMatchUp2(j).getSurname());
-                        i++;
-                    }
-                }
+    public int getTime() {
+        return time;
+    }
+
+    public int getCurrentMinute() {
+        return currentMinute;
+    }
+
+    public ArrayList<Goal> getGoals(){
+        ArrayList<Goal> goals = new ArrayList<>();
+        goals.addAll(goalsHome);
+        goals.addAll(goalsAway);
+        Collections.sort(goals, new Comparator<Goal>() {
+            @Override
+            public int compare(Goal o1, Goal o2) {
+                return o2.getMinute()-o1.getMinute();
             }
-            goal = (int) (Math.random() * (home.getTeamDefenseRatio() + 1500));
-            for (int j = 0; j < 11; j++) {
-                for (int k = 0; k < (int) (away.getTeamOffensiveRatio(j) / 50); k++) {
-                    int shot = (int) (Math.random() * (1500 + home.getTeamDefenseRatio()));
-                    if (shot == goal) {
-                        goalsAway.add(new Goal(away,away.getMatchUp2(j),i));
-                        minutes.add(i);
-                        teamGoal.add(2);
-                        scorers.add(j);
-                        GoalsAway++;
-                        away.getMatchUp2(j).GoalScored();
-                        System.out.println(i + "'                                 " + away.getMatchUp2(j).getNumber() + "." + away.getMatchUp2(j).getName() + " " + away.getMatchUp2(j).getSurname());
-                        i++;
-                    }
-                }
-            }
+        });
+        return goals;
+    }
 
-
-        }
-
-        System.out.println(GoalsHome + ":" + GoalsAway + "\n ");
-
-
+    public void sumUp(){
+        int goalsHome = getGoalsHome().size();
+        int goalsAway = getGoalsAway().size();
         home.addPlayed();
         away.addPlayed();
-        home.addConceded(GoalsAway);
-        away.addScored(GoalsAway);
-        away.addConceded(GoalsHome);
-        home.addScored(GoalsHome);
-        if (GoalsHome > GoalsAway) {
+        home.addConceded(goalsAway);
+        away.addScored(goalsAway);
+        away.addConceded(goalsHome);
+        home.addScored(goalsHome);
+        if (goalsHome > goalsAway) {
             home.addPoints(3);
             home.addWon();
             away.addLost();
         }
-        if (GoalsAway == GoalsHome) {
+        if (goalsAway == goalsHome) {
             home.addPoints(1);
             away.addPoints(1);
             home.addDrawn();
             away.addDrawn();
         }
-        if (GoalsAway > GoalsHome) {
+        if (goalsAway > goalsHome) {
             away.addPoints(3);
             home.addLost();
             away.addWon();
         }
+    }
 
+    public void playMatch(){
+        System.out.println("          " + home.getName() + "           " + away.getName());
+        for(int i=0; i<=time; i++){
+            matchEngine();
+        }
+        sumUp();
+    }
 
+    public Goal matchEngine(){
+        home.clearRatios();
+        away.clearRatios();
+        home.getMatchUp();
+        away.getMatchUp();
+        home.calculateRatio(false);
+        away.calculateRatio(false);
+        int goal;
+        goal = (int) (Math.random() * (away.getTeamDefenseRatio()));
+        for (int j = 0; j < 11; j++) {
+            for (int k = 0; k < (int) (home.getTeamOffensiveRatio(j) / 40); k++) {
+                int shot = (int) (Math.random() * (1000 + away.getTeamDefenseRatio()));
+                if (shot == goal) {
+                    Goal goal1 = new Goal(home,home.getMatchUp2(j),currentMinute);
+                    goalsHome.add(new Goal(home,home.getMatchUp2(j),currentMinute));
+                    home.getMatchUp2(j).GoalScored();
+                    System.out.println(currentMinute + "'       " + home.getMatchUp2(j).getNumber() + "." + home.getMatchUp2(j).getName() + " " + home.getMatchUp2(j).getSurname());
+                    currentMinute++;
+                    return goal1;
+                }
+            }
+        }
+        goal = (int) (Math.random() * (home.getTeamDefenseRatio() + 1500));
+        for (int j = 0; j < 11; j++) {
+            for (int k = 0; k < (int) (away.getTeamOffensiveRatio(j) / 50); k++) {
+                int shot = (int) (Math.random() * (1500 + home.getTeamDefenseRatio()));
+                if (shot == goal) {
+                    Goal goal1 = new Goal(away,away.getMatchUp2(j),currentMinute);
+                    goalsAway.add(goal1);
+                    away.getMatchUp2(j).GoalScored();
+                    System.out.println(currentMinute + "'                                 " + away.getMatchUp2(j).getNumber() + "." + away.getMatchUp2(j).getName() + " " + away.getMatchUp2(j).getSurname());
+                    currentMinute++;
+                    return goal1;
+                }
+            }
+        }
+        currentMinute++;
+        return null;
+    }
+
+    public String[] matchEngineFormatter(){
+        Goal goal = matchEngine();
+        if(goal != null){
+            String team;
+            if(goal.getTeam().equals(home)){
+                team="Home";
+            }
+            else team ="Away";
+            return new String[]{String.valueOf(goal.getMinute())+"'",String.valueOf(goal.getPlayer().getName()+" "+goal.getPlayer().getSurname()),team};
+        }
+        else return null;
     }
 
     private class Goal{
@@ -133,6 +164,7 @@ public class Match {
         public int getMinute() {
             return minute;
         }
+
         public Player getPlayer() {
             return player;
         }

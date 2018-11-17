@@ -26,25 +26,7 @@ public class Group {
 
 
     // metoda pozwalajaca rozegrać fazę grupową z zachowaniem harmonogramu używanego oficjalnie
-    public int[] GroupStage(int day){
-            int score1[]=new int [2];
-            int score2[]=new int [2];
-            switch(day){
-                case 1: score1=GroupTeams[0].PlayMatch(GroupTeams[2],90); score2=GroupTeams[1].PlayMatch(GroupTeams[3],90) ; break;
-                case 2: score1=GroupTeams[2].PlayMatch(GroupTeams[1],90); score2=GroupTeams[3].PlayMatch(GroupTeams[0],90) ; break;
-                case 3: score1=GroupTeams[0].PlayMatch(GroupTeams[1],90); score2=GroupTeams[2].PlayMatch(GroupTeams[3],90) ; break;
-                case 4: score1=GroupTeams[1].PlayMatch(GroupTeams[0],90); score2=GroupTeams[3].PlayMatch(GroupTeams[2],90) ; break;
-                case 5: score1=GroupTeams[2].PlayMatch(GroupTeams[0],90); score2=GroupTeams[3].PlayMatch(GroupTeams[1],90) ; break;
-                case 6: score1=GroupTeams[1].PlayMatch(GroupTeams[2],90); score2=GroupTeams[0].PlayMatch(GroupTeams[3],90); break;
-                default: System.out.println("Group stage is over. Here are the standings:"); Show(); break;
-               }
-            int scores[]=new int[4];
-            scores[0]=score1[0];
-            scores[1]=score1[1];
-            scores[2]=score2[0];
-            scores[3]=score2[1];
-            return scores;
-    }
+  
     // metoda wyświetlająca sytuację w grupie łącznie z uszeregowaniem zespołów w kolejności malejącej według punktów, następnie bilansu bramkowego, ilości strzelonych goli
     public void Show(){
         Team table[]= new Team[5];
